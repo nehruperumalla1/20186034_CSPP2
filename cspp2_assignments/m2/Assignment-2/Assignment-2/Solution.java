@@ -3,7 +3,6 @@
  * @author     Nehru.
  */
 import java.util.Scanner;
-import static java.lang.Math.sqrt;
 /**
  * { item_description }.
  */
