@@ -18,7 +18,7 @@ public class Solution {
 		if (exp == 1) {
 			return base;
 		} else {
-			return power(base*base, exp-1);
+			return base * power(base, exp-1);
 		}
 	}
 }
