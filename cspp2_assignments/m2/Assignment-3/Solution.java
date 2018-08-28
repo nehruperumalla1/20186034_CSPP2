@@ -5,6 +5,12 @@
 import java.util.Scanner;
 public final class Solution {
     /**
+     * Empty Constructor.
+     */
+    private Solution() {
+        // Empty Constructor.
+    }
+    /**
      * Do not modify this main function.
      * @param args Arguments.
      */
@@ -12,7 +18,7 @@ public final class Solution {
         Scanner s = new Scanner(System.in);      
         int base = s.nextInt();
         int exponent = s.nextInt();
-        long result = power(base,exponent);
+        long result = power(base, exponent);
         System.out.println(result);
     }
 
