@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Solution {
+public final class Solution {
 	/**
 	 * Do not modify this main function.
 	 */
