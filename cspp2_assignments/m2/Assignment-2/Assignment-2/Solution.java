@@ -21,9 +21,9 @@ public final class Solution {
      * @param      c     { parameter_description }.
      */
     static void rootsQuadraticEquation(final int a, final int b, final int c) {
-        double x = ( - b + Math.sqrt((b * b) - y() * a * c)) / (2 * a);
+        double x = (- b + Math.sqrt((b * b) - y() * a * c)) / (2 * a);
         double r = a * (x * x) + b * x + c;
-        double x1 = ( - b - Math.sqrt((b * b) - y() * a * c)) / (2 * a);
+        double x1 = (- b - Math.sqrt((b * b) - y() * a * c)) / (2 * a);
         double r1 = a * (x1 * x1) + b * x1 + c;
         System.out.println(x + " " + x1);
     }
