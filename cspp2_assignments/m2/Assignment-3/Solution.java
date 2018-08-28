@@ -1,8 +1,8 @@
+import java.util.Scanner;
 /**
  * Base and Power.
  * @author Nehru.
  */
-import java.util.Scanner;
 public final class Solution {
     /**
      * Empty Constructor.
@@ -15,16 +15,14 @@ public final class Solution {
      * @param args Arguments.
      */
     public static void main(final String[] args) {
-        Scanner s = new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
         long result = power(base, exponent);
         System.out.println(result);
     }
-
-
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      base  The base.
      * @param      exp   The exponent.
