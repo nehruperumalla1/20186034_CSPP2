@@ -3,8 +3,11 @@
  * @author     Nehru.
  */
 import java.util.Scanner;
-import static java.lang.Math.sqrt; 
+import static java.lang.Math.sqrt;
 public final class Solution {
+    /**
+     * { var_description }.
+     */
     private static final int YVALUE = 4;
     /**
      * Not Using this Constructor.
