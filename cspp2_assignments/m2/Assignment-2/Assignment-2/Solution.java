@@ -26,7 +26,6 @@ public final class Solution {
         int c = scan.nextInt();
         rootsQuadraticEquation(a, b, c);
     }
-    
     /**
      * { function_description }.
      *
@@ -41,7 +40,13 @@ public final class Solution {
         double r1 = a * (x1 * x1) + b * x1 + c;
         System.out.println(x + " " + x1);
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }.
+     */
     static int y() {
+
         return YVALUE;
     }
 }
