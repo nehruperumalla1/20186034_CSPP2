@@ -1,11 +1,17 @@
 /**
- *  RootsofQuadraticEquations.
- *  @author Nehru.
+ * RootsofQuadraticEquations.
+ * @author     Nehru.
  */
 import java.util.Scanner;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.sqrt; 
 public final class Solution {
-    private static final int YVal = 4;
+    private static final int YVALUE = 4;
+    /**
+     * Not Using this Constructor.
+     */
+    private Solution() {
+        //Empty Constructor.
+    }
     /**
      * Do not modify this main function.
      * @param args
@@ -33,6 +39,6 @@ public final class Solution {
         System.out.println(x + " " + x1);
     }
     static int y() {
-        return YVal;
+        return YVALUE;
     }
 }
