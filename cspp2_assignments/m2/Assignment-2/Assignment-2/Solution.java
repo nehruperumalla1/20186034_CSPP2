@@ -4,6 +4,9 @@
  */
 import java.util.Scanner;
 import static java.lang.Math.sqrt;
+/**
+ * { item_description }.
+ */
 public final class Solution {
     /**
      * { var_description }.
@@ -41,7 +44,7 @@ public final class Solution {
         System.out.println(x + " " + x1);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }.
      */
