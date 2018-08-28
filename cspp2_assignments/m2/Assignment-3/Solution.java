@@ -22,10 +22,16 @@ public final class Solution {
         System.out.println(result);
     }
 
+
     /**
-     * Need to write the power function and print the output.
+     * { function_description }
+     *
+     * @param      base  The base.
+     * @param      exp   The exponent.
+     *
+     * @return     { description_of_the_return_value }
      */
-    static long power(int base, int exp) {
+    static long power(final int base, final int exp) {
         if (exp == 1) {
             return base;
         } else if (exp == 0) {
