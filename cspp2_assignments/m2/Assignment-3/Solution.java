@@ -13,7 +13,7 @@ public class Solution {
 	/**
 	 * Need to write the power function and print the output.
 	 */
-	static int power(int base, int exp) {
+	static long power(int base, int exp) {
 		if (exp == 1) {
 			return base;
 		} else {
