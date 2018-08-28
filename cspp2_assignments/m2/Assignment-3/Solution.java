@@ -15,7 +15,7 @@ public class Solution {
 	Need to write the power function and print the output.
 	*/
 	static int power(int base, int exp) {
-		if (exp == 0) {
+		if (exp == 1) {
 			return base;
 		} else {
 			return base * power(base, exp-1);
