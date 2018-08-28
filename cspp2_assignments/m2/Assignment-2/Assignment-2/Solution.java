@@ -17,7 +17,7 @@ public final class Solution {
     }
     /**
      * Do not modify this main function.
-     * @param args
+     * @param args Arguments.
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
