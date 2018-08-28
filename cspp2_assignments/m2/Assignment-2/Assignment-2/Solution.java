@@ -1,10 +1,15 @@
+/**
+ *  RootsofQuadraticEquations.
+ *  @author Nehru.
+ */
 import java.util.Scanner;
 import static java.lang.Math.sqrt;
 public final class Solution {
     private static final int YVal = 4;
-    /*
-    Do not modify this main function.
-    */
+    /**
+     * Do not modify this main function.
+     * @param args
+     */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
