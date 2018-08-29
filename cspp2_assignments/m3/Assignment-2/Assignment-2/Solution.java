@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Count of 7 upto n Numbers.
  * @author Nehru.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
