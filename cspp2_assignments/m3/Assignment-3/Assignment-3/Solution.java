@@ -25,7 +25,6 @@ public final class Solution {
      * { function_description }.
      * @param      x     { parameter_description }
      * @param      y     { parameter_description }
-     * @return     { description_of_the_return_value }
      */
     public static void gcd(final int x, final int y) {
         int num = 0;
