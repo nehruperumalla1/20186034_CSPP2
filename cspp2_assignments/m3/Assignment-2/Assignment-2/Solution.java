@@ -10,9 +10,8 @@ public class Solution {
      *
      * @param      args  The arguments.
      */
-    String str = "";
-    public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);      
+    public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);      
         int n = s.nextInt();
         int count = 0;
         char num = '7';
@@ -20,9 +19,9 @@ public class Solution {
             String str = "";
             str = str + i;
             for (int k = 0; k < str.length(); k++) {
-            	if(str.charAt(k) == num) {
-            		count++;
-            	}
+                if (str.charAt(k) == num) {
+                    count++;
+                }
             }
         }
         System.out.println(count);
