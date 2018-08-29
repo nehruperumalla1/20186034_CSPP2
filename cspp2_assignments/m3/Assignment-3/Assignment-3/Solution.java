@@ -15,8 +15,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
-
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
@@ -25,10 +24,8 @@ public final class Solution {
     }
     /**
      * { function_description }.
-     *
      * @param      x     { parameter_description }
      * @param      y     { parameter_description }
-     *
      * @return     { description_of_the_return_value }
      */
     static final void gcd(final int x, final int y) {
