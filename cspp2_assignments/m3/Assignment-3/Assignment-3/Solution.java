@@ -27,7 +27,7 @@ public final class Solution {
      * @param      y     { parameter_description }
      * @return     { description_of_the_return_value }
      */
-    static final void gcd(int x, int y) {
+    public static void gcd(final int x, final int y) {
         int num = 0;
         for (int i = 1; i <= x; i++) {
             if ((x % i == 0) && (y % i == 0)) {
