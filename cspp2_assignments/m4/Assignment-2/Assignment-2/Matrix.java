@@ -8,10 +8,6 @@ import java.util.Scanner;
  */
 public final class Matrix {
     /**
-     * { var_description }.
-     */
-    private static Scanner sc = new Scanner(System.in);
-    /**
      * Constructs the object.
      */
     private Matrix() {
