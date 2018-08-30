@@ -27,16 +27,23 @@ public final class Matrix {
         if ((m != x) || (n != y)) {
             System.out.println("not possible");
         } else {
-            int[][] sumMatrix = getAdd(matrix1, matrix2, createMatrix(m, n));
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n - 1; j++) {
-                    System.out.print(sumMatrix[i][j] + " ");
-                }
-                System.out.println(sumMatrix[i][n - 1]);
-            }
+            printMatrix(getAdd(matrix1, matrix2, createMatrix(m, n)));
         }
     }
 
+    /**
+     * { function_description }
+     *
+     * @param      sumMatrix  The sum matrix
+     */
+    public static void printMatrix(final int[][] sumMatrix) {
+        for (int i = 0; i < getRowSize(sumMatrix); i++) {
+            for (int j = 0; j < getColumnSize(sumMatrix) - 1; j++) {
+                System.out.print(sumMatrix[i][j] + " ");
+            }
+           System.out.println(sumMatrix[i][getRowSize(sumMatrix) - 1]);
+        }
+    }
     /**
      * Gets the add.
      *
