@@ -46,7 +46,9 @@ public final class Matrix {
      *
      * @return     The add.
      */
-    public static int[][] getAdd(final int[][] matrix1, final int[][] matrix2, final int[][] sumMatrix) {
+    public static int[][] getAdd(final int[][] matrix1,
+                                final int[][] matrix2,
+                                final int[][] sumMatrix) {
         for (int i = 0; i < getRowSize(matrix1); i++) {
             for (int j = 0; j < getColumnSize(matrix1); j++) {
                 sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
@@ -81,7 +83,7 @@ public final class Matrix {
      *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] createMatrix(int m, int n) {
+    public static int[][] createMatrix(final int m, final int n) {
         return new int[m][n];
     }
 
