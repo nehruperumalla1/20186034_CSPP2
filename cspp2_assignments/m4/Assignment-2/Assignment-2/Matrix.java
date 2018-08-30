@@ -20,12 +20,10 @@ public final class Matrix {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[][] matrix1 = matrix(sc);
-        int[][] matrix2 = matrix(sc);
-        int m = matrix1.length;
-        int n = matrix1[0].length;
-        int x = matrix2.length;
-        int y = matrix2[0].length;
+        int[][] matrix1 = createMatrix(sc);
+        int[][] matrix2 = createMatrix(sc);
+        int m = getRowSize(matrix1), n = getColumnSize(matrix1);
+        int x = getRowSize(matrix2), y = getColumnSize(matrix2);
         if ((m != x) || (n != y)) {
             System.out.println("not possible");
         } else {
@@ -50,7 +48,7 @@ public final class Matrix {
      *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] matrix(final Scanner sc) {
+    public static int[][] createMatrix(final Scanner sc) {
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
@@ -61,4 +59,27 @@ public final class Matrix {
         }
         return arr;
     }
+
+    /**
+     * Gets the row size.
+     *
+     * @param      array  The array
+     *
+     * @return     The row size.
+     */
+    public static int getRowSize(final int[][] array) {
+        return array.length;
+    }
+    
+    /**
+     * Gets the column size.
+     *
+     * @param      array  The array
+     *
+     * @return     The column size.
+     */
+    public static int getColumnSize(final int[][] array) {
+        return array[0].length;
+    }
+
 }
