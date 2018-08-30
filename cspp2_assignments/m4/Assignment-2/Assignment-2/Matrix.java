@@ -27,12 +27,7 @@ public final class Matrix {
         if ((m != x) || (n != y)) {
             System.out.println("not possible");
         } else {
-            int[][] sumMatrix = new int[m][n];
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
-                }
-            }
+            int[][] sumMatrix = getAdd(matrix1, matrix2, createMatrix(m, n));
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n - 1; j++) {
                     System.out.print(sumMatrix[i][j] + " ");
@@ -40,6 +35,24 @@ public final class Matrix {
                 System.out.println(sumMatrix[i][n - 1]);
             }
         }
+    }
+
+    /**
+     * Gets the add.
+     *
+     * @param      matrix1    The matrix 1
+     * @param      matrix2    The matrix 2
+     * @param      sumMatrix  The sum matrix
+     *
+     * @return     The add.
+     */
+    public static int[][] getAdd(final int[][] matrix1, final int[][] matrix2, final int[][] sumMatrix) {
+        for (int i = 0; i < getRowSize(matrix1); i++) {
+            for (int j = 0; j < getColumnSize(matrix1); j++) {
+                sumMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
+           }
+        }
+        return sumMatrix;
     }
     /**
      * { function_description }.
@@ -58,6 +71,18 @@ public final class Matrix {
             }
         }
         return arr;
+    }
+
+    /**
+     * Creates a matrix.
+     *
+     * @param      m     { parameter_description }
+     * @param      n     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static int[][] createMatrix(int m, int n) {
+        return new int[m][n];
     }
 
     /**
