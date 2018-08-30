@@ -70,7 +70,6 @@ public final class Matrix {
     public static int getRowSize(final int[][] array) {
         return array.length;
     }
-    
     /**
      * Gets the column size.
      *
