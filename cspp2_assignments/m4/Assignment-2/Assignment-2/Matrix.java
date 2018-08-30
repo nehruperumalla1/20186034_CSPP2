@@ -50,7 +50,7 @@ public final class Matrix {
      *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] matrix(Scanner sc) {
+    public static int[][] matrix(final Scanner sc) {
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
