@@ -7,6 +7,9 @@ import java.util.Scanner;
  * Class.
  */
 public final class Solution {
+    /**
+     * { var_description }.
+     */
     private static Scanner sc = new Scanner(System.in);
     /**
      * Constructs the object.
@@ -54,7 +57,7 @@ public final class Solution {
     public static int[][] matrix(final int m, final int n) {
         int[][] arr = new int[m][n];
         for (int i = 0; i < m; i++) {
-            for (int j = 0;j < n; j++) {
+            for (int j = 0; j < n; j++) {
                 arr[i][j] = sc.nextInt();
             }
         }
