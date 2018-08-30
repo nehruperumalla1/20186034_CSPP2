@@ -2,7 +2,7 @@
  * Sum of two matrices.
  * @author Nehru.
  */
-import java.util.*;
+import java.util.Scanner;
 /**
  * Class.
  */
