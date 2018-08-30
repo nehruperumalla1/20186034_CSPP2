@@ -32,7 +32,7 @@ public final class Matrix {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      sumMatrix  The sum matrix
      */
