@@ -19,8 +19,9 @@ public final class Matrix {
      * @param args Argument.
      */
     public static void main(final String[] args) {
-        int[][] matrix1 = matrix();
-        int[][] matrix2 = matrix();
+        Scanner sc = new Scanner(System.in);
+        int[][] matrix1 = matrix(sc);
+        int[][] matrix2 = matrix(sc);
         int m = matrix1.length;
         int n = matrix1[0].length;
         int x = matrix2.length;
@@ -49,8 +50,7 @@ public final class Matrix {
      *
      * @return     { description_of_the_return_value }
      */
-    public static int[][] matrix() {
-        Scanner sc = new Scanner(System.in);
+    public static int[][] matrix(Scanner sc) {
         int m = sc.nextInt();
         int n = sc.nextInt();
         int[][] arr = new int[m][n];
