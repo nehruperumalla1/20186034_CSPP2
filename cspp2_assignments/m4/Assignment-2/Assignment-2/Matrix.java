@@ -45,8 +45,8 @@ public final class Matrix {
     }
     /**
      * { function_description }.
-     * @param      m     { parameter_description }
-     * @param      n     { parameter_description }
+     *
+     * @param      sc    The scanner object     *
      *
      * @return     { description_of_the_return_value }
      */
