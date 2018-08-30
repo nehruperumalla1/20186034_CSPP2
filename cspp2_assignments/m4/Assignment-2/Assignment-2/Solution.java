@@ -27,13 +27,14 @@ public class Solution {
 					sumMatrix[i][j] = matrix1[i][j]+matrix2[i][j];
 				}
 			}
-		}
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n-1; j++) {
-			System.out.print(sumMatrix[i][j] + " ");
+			for (int i = 0; i < m; i++) {
+				for (int j = 0; j < n-1; j++) {
+					System.out.print(sumMatrix[i][j] + " ");
+				}
+				System.out.println(sumMatrix[i][n-1]);
 			}
-			System.out.println(sumMatrix[i][n-1]);
 		}
+		
 	}
 	public static int[][] matrix(int m, int n) {
 		int[][] arr = new int[m][n];
