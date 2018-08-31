@@ -17,11 +17,11 @@ public final class Solution {
 	Do not modify this main function.
 	*/
 	public static void main(final String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int n= sc.nextInt();
-		for(int i=0;i<=n;i++){
-			String s=sc.next();
-			long res=binaryToDecimal(s);//Write binaryToDecimal function
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for(int i = 0; i < n; i++){
+			String s = sc.next();
+			long res = binaryToDecimal(s);//Write binaryToDecimal function
 			System.out.println(res);
 		}
 	}
