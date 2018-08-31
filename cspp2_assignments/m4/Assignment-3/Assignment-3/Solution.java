@@ -19,14 +19,14 @@ public final class Solution {
 	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		for(int i = 0; i < n; i++){
+		for (int i = 0; i < n; i++){
 			String s = sc.next();
-			long res = binaryToDecimal(s);//Write binaryToDecimal function
+			long res = binaryToDecimal(s);
 			System.out.println(res);
 		}
 	}
 	/**
-	 * { function_description }
+	 * { function_description }.
 	 *
 	 * @param      s     { parameter_description }
 	 *
@@ -36,13 +36,13 @@ public final class Solution {
 		double result = 1;
 		int sum = 0;
 		int base = 2;
-		int k = s.length()-1;
+		int k = s.length() - 1;
 		for (int i = 0; i < s.length(); i++) {
-			if(s.charAt(i) == '1') {
+			if (s.charAt(i) == '1') {
 				result = Math.pow(2, k);
 				sum += result;	
 			}
-			k = k-1;
+			k = k - 1;
 		}
 		return sum;
 	}
