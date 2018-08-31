@@ -14,7 +14,7 @@ public final class Solution {
         //Empty Constructor.
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -35,7 +35,7 @@ public final class Solution {
      * @return     { description_of_the_return_value }
      */
     public static long binaryToDecimal(final String s) {
-        double result = 1;
+        double result;
         int sum = 0;
         int base = 2;
         int k = s.length() - 1;
