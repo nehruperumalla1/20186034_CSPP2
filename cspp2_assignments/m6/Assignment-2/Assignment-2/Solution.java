@@ -35,8 +35,10 @@ final class Solution {
     				count += 1;
     			}
 
-    			if (100 - num < 50) {
+    			if ((100 - num) < 50) {
     				num = num + (100 - num);
+    			} else {
+    				num = 0;
     			}
     			while (count >= 0) {
     				num += 100;
