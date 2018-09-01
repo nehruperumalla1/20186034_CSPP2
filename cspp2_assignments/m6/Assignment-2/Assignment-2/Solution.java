@@ -13,6 +13,8 @@ final class Solution {
     private Solution() {
         //not used
     }
+    private static int NUMBER1 = 100;
+    private static int NUMBER2 = 50;
     /**
      * Function to round the
      * elements of a matrix to the nearest 100.
@@ -23,34 +25,34 @@ final class Solution {
      *
      * @return     Matrix of the rounded elements
      */
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
-
-	// write your code here
-    	int num = 0;
-    	int count = 0;
-    	for (int i = 0; i < rows; i++) {
-    		for (int j = 0; j < columns; j++) {
-    			count = 0;
-    			num = a[i][j];
-    			while (num > 100) {
-    				num -= 100;
-    				count += 1;
-    			}
-    			if ((100 - num) < 50) {
-    				num = num + (100 - num);
-    			} else {
-    				num = 0;
-    			} 
-    			if (count > 0) {
-    				while (count > 0) {
-    					num += 100;
-    					count -= 1;
-    				}
-    			}
-    			a[i][j] = num;
-    		}
-    	}
-    	return a;
+    static int[][] roundHundred(final int[][] a, final int rows,
+                                        final int columns) {
+    // write your code here
+        int num = 0;
+        int count = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                count = 0;
+                num = a[i][j];
+                while (num > num1()) {
+                    num -= num1();
+                    count += 1;
+                }
+                if ((num1() - num) < num2()) {
+                    num = num + (num1() - num);
+                } else {
+                    num = 0;
+                } 
+                if (count > 0) {
+                    while (count > 0) {
+                        num += num1();
+                        count -= 1;
+                    }
+                }
+                a[i][j] = num;
+            }
+        }
+        return a;
     }
     /**
      * Main function.
@@ -74,5 +76,11 @@ final class Solution {
             }
             System.out.println(b[i][n - 1]);
         }
+    }
+    public static int num1() {
+        return NUMBER1;
+    }
+    public static int num2() {
+        return NUMBER2;
     }
 }
