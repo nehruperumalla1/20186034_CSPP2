@@ -13,8 +13,8 @@ final class Solution {
     private Solution() {
         //not used
     }
-    private static int NUMBER1 = 100;
-    private static int NUMBER2 = 50;
+    private static int NUMBER = 100;
+    private static int NUMBERR = 50;
     /**
      * Function to round the
      * elements of a matrix to the nearest 100.
@@ -78,9 +78,9 @@ final class Solution {
         }
     }
     public static int num1() {
-        return NUMBER1;
+        return NUMBER;
     }
     public static int num2() {
-        return NUMBER2;
+        return NUMBERR;
     }
 }
