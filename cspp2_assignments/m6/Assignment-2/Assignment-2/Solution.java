@@ -40,6 +40,7 @@ final class Solution {
     				num = num + (100 - num);
     			} else {
     				num = 0;
+    				System.out.println(num);
     			} 
     			if (count > 0) {
     				while (count >= 0) {
