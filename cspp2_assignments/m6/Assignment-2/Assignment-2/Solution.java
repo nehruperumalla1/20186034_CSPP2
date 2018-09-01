@@ -15,11 +15,11 @@ final class Solution {
     /**
      * { var_description }.
      */
-    private static int NUMBER = 100;
+    private static final int NUMBER = 100;
     /**
      * { var_description }.
      */
-    private static int NUMBERR = 50;
+    private static final int NUMBERR = 50;
     /**
      * Function to round the
      * elements of a matrix to the nearest 100.
@@ -83,16 +83,14 @@ final class Solution {
         }
     }
     /**
-     * { function_description }
-     *
+     * { function_description }.
      * @return     { description_of_the_return_value }
      */
     public static int num1() {
         return NUMBER;
     }
     /**
-     * { function_description }
-     *
+     * { function_description }.
      * @return     { description_of_the_return_value }
      */
     public static int num2() {
