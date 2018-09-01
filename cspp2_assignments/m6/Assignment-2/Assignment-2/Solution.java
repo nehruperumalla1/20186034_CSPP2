@@ -42,7 +42,7 @@ final class Solution {
     				num = 0;
     			} 
     			if (count > 0) {
-    				while (count >= 0) {
+    				while (count > 0) {
     					num += 100;
     					count -= 1;
     				}
