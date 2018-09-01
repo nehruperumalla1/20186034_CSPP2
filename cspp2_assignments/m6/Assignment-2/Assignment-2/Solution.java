@@ -44,10 +44,10 @@ final class Solution {
     			if (count > 0) {
     				while (count >= 0) {
     					num += 100;
+    					count -= 1;
     				}
     			}
     			a[i][j] = num;
-    			System.out.println(a[i][j]);
     		}
     	}
     	return a;
