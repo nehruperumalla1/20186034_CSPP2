@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 /**
  * Write a java program to round the
  * elements of a matrix to the nearest 100.
