@@ -40,11 +40,11 @@ final class Solution {
     				num = num + (100 - num);
     			} else {
     				num = 0;
-    				count = -1;
-    			}
-    			while (count >= 0) {
-    				num += 100;
-    				count -= 1;
+    			} 
+    			if (count > 0) {
+    				while (count >= 0) {
+    					num += 100;
+    				}
     			}
     			a[i][j] = num;
     		}
