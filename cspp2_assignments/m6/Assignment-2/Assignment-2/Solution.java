@@ -1,10 +1,9 @@
 import java.util.Scanner;
-import java.util.Arrays;
 /**
  * Write a java program to round the
  * elements of a matrix to the nearest 100.
  *
- * @author : 
+ * @author : Nehru
  */
 final class Solution {
     /**
@@ -13,7 +12,13 @@ final class Solution {
     private Solution() {
         //not used
     }
+    /**
+     * { var_description }.
+     */
     private static int NUMBER = 100;
+    /**
+     * { var_description }.
+     */
     private static int NUMBERR = 50;
     /**
      * Function to round the
@@ -42,7 +47,7 @@ final class Solution {
                     num = num + (num1() - num);
                 } else {
                     num = 0;
-                } 
+                }
                 if (count > 0) {
                     while (count > 0) {
                         num += num1();
@@ -77,9 +82,19 @@ final class Solution {
             System.out.println(b[i][n - 1]);
         }
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static int num1() {
         return NUMBER;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static int num2() {
         return NUMBERR;
     }
