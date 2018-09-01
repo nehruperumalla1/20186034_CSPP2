@@ -38,8 +38,6 @@ final class Solution {
 
     			if ((100 - num) < 50) {
     				num = num + (100 - num);
-    			} else if ((100 - num) > 50) {
-    				num = 0;
     			} else {
     				num = 0;
     				count = -1;
