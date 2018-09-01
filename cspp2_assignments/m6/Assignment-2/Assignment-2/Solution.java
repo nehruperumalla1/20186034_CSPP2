@@ -40,7 +40,6 @@ final class Solution {
     				num = num + (100 - num);
     			} else {
     				num = 0;
-    				System.out.println(num);
     			} 
     			if (count > 0) {
     				while (count >= 0) {
@@ -48,6 +47,7 @@ final class Solution {
     				}
     			}
     			a[i][j] = num;
+    			System.out.println(a[i][j]);
     		}
     	}
     	return a;
