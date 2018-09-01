@@ -36,7 +36,6 @@ final class Solution {
     				num -= 100;
     				count += 1;
     			}
-    			System.out.println(num);
     			if ((100 - num) < 50) {
     				num = num + (100 - num);
     			} else {
