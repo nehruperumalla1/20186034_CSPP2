@@ -29,6 +29,7 @@ final class Solution {
     	int count = 0;
     	for (int i = 0; i < rows; i++) {
     		for (int j = 0; j < columns; j++) {
+    			count = 0;
     			num = a[i][j];
     			while (num > 100) {
     				num -= 100;
@@ -37,8 +38,11 @@ final class Solution {
 
     			if ((100 - num) < 50) {
     				num = num + (100 - num);
+    			} else if ((100 - num) > 50) {
+    				num = 0;
     			} else {
     				num = 0;
+    				count = -1;
     			}
     			while (count >= 0) {
     				num += 100;
