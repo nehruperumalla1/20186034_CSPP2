@@ -32,11 +32,7 @@ class InputValidator {
      * @return     { description_of_the_return_value }
      */
     public boolean validateData(final String inputdata) {
-        if ((this.data).length() >= value()) {
-            return true;
-        } else {
-            return false;
-        }
+        return (this.data).length() >= value();
     }
     /**
      * { function_description }.
