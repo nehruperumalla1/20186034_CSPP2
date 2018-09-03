@@ -15,6 +15,9 @@ class InputValidator {
      * { var_description }.
      */
     private String data;
+    /**
+     * { var_description }.
+     */
     private String length;
     /**
      * Constructs the object.
