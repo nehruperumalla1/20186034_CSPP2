@@ -7,6 +7,9 @@ import java.util.Scanner;
  * Class for input validator.
  */
 class InputValidator {
+    /**
+     * { var_description }.
+     */
     private static final int VALUE = 6;
     /**
      * { var_description }.
