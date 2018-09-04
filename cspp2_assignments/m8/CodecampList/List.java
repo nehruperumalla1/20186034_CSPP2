@@ -200,34 +200,6 @@ public class List {
         }
         return -1;
     }
-    // public void add(int index, int item) {
-    //  if(size >= (this.list).length) {
-    //      System.out.println("List is Full");
-    //  } else {
-    //      for (int i = index; i <= size()+1; i++) {
-    //          this.list[i+1] = this.list[i];
-    //      }
-    //      this.list[index] = item;
-    //  }
-    //  indexx += 1;
-    // }
-
-    // public int count(int item) {
-    //  int count = 0;
-    //  for (int i = 0; i < size(); i++) {
-    //      if(this.list[i] == item) {
-    //          count += 1;
-    //      }
-    //  }
-    //  return count;
-    // }
-
-    // public void addAll(int[] items) {
-    //  for (int i = 0; i < size(); i++) {
-    //      this.list[indexx] = items[i];
-    //      indexx+=1;
-    //  }
-    // }
     /*
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
@@ -348,7 +320,10 @@ public class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                int n = l.get(Integer.parseInt(tokens[1]));
+                if (n != -1) {
+                    System.out.println(n);
+                }
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
