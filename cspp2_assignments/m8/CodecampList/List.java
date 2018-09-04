@@ -60,7 +60,10 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    private final int TEN = 10;
+    /**
+     * { var_description }.
+     */
+    private static final int TEN = 10;
     /**
      * { var_description }.
      */
@@ -86,6 +89,11 @@ public class List {
         this.list = new int[value()];
         this.indexx = 0;
     }
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int value() {
         return TEN;
     }
