@@ -91,7 +91,7 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
-        if (indexx < list.length){
+        if (indexx < list.length) {
         	list[indexx] = item;
         	indexx += 1;
         }
@@ -161,6 +161,35 @@ public class List {
         return -1;
     }
 
+
+    // public void add(int index, int item) {
+    // 	if(size >= (this.list).length) {
+    // 		System.out.println("List is Full");
+    // 	} else {
+    // 		for (int i = index; i <= size()+1; i++) {
+    // 			this.list[i+1] = this.list[i];
+    // 		}
+    // 		this.list[index] = item;
+    // 	}
+    // 	indexx += 1;
+    // }
+
+    // public int count(int item) {
+    // 	int count = 0;
+    // 	for (int i = 0; i < size(); i++) {
+    // 		if(this.list[i] == item) {
+    // 			count += 1;
+    // 		}
+    // 	}
+    // 	return count;
+    // }
+
+    // public void addAll(int[] items) {
+    // 	for (int i = 0; i < size(); i++) {
+    // 		this.list[indexx] = items[i];
+    // 		indexx+=1;
+    // 	}
+    // }
     /*
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
@@ -200,7 +229,7 @@ public class List {
      */
     public boolean contains(int item) {
         // Replace the code below
-        for (int i = 0; i < (this.list).length; i++) {
+        for (int i = 0; i < size(); i++) {
         	if (this.list[i] == item) {
         		return true;
         	}
@@ -215,7 +244,7 @@ public class List {
      */
     public int indexOf(int item) {
         // Replace the code below
-        for (int i = 0; i < (this.list).length; i++) {
+        for (int i = 0; i < size(); i++) {
         	if(this.list[i] == item) {
         		return i;
         	}
