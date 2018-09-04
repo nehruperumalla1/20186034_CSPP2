@@ -60,6 +60,7 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
+    private final int TEN = 10;
     /**
      * { var_description }.
      */
@@ -82,8 +83,11 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        this.list = new int[10];
+        this.list = new int[value()];
         this.indexx = 0;
+    }
+    public int value() {
+        return TEN;
     }
     /*
      * The add method does what the name suggests.
@@ -181,7 +185,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index < size() && index >= 0) {
             return this.list[index];
