@@ -28,7 +28,6 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -50,7 +49,7 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
 
     // declare a private int size
@@ -61,8 +60,13 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-
+    /**
+     * { var_description }.
+     */
     private int[] list;
+    /**
+     * { var_description }.
+     */
     private int indexx;
     /**
      * Constructs the object.
@@ -74,7 +78,6 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
@@ -82,7 +85,6 @@ public class List {
         this.list = new int[10];
         this.indexx = 0;
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -91,15 +93,15 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
+     *
      * The method returns void (nothing)
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (indexx < list.length) {
             list[indexx] = item;
@@ -111,11 +113,11 @@ public class List {
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
+     *
      * The method returns an int. Empty list should return 0.
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -123,12 +125,11 @@ public class List {
         // replace the code below to implement the size method
         return this.indexx;
     }
-
     /*
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -145,18 +146,18 @@ public class List {
      * The method returns void (nothing)
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= size()) {
             System.out.println("Invalid Position Exception");
         } else {
             for (int i = index; i < size() - 1; i++) {
-                    this.list[i] = this.list[i+1];
+                    this.list[i] = this.list[i + 1];
             }
         this.indexx -= 1;
         }
@@ -170,11 +171,11 @@ public class List {
      * How can an element not be there at a given position?
      * Well, if the position is greater than the number of items
      * in the list then that would mean the item doesn't exist.
-     * How do we check if the position is greater than the 
+     * How do we check if the position is greater than the
      * number of items in the list? Would size variable be useful?
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      index  The index
      *
@@ -224,7 +225,7 @@ public class List {
      * System.out.println(l);
      * This statement is a shortcut for
      * System.out.println(l.toString());
-     * 
+     *
      * So, implement the toString method to display the items
      * in the list in the square brackets notation.
      * i.e., if the list has numbers 1, 2, 3
@@ -242,15 +243,14 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        String s = new String(); 
+        String s = new String();
         s = "[";
-        for (int i = 0; i < size()-1; i++) {
+        for (int i = 0; i < size() - 1; i++) {
             s += this.list[i] + ",";
         }
-        s += this.list[size()-1] + "]";
+        s += this.list[size() - 1] + "]";
         return s;
-    } 
-    
+    }
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -258,13 +258,13 @@ public class List {
      * the item exists and otherwise false
      */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item  The item
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size(); i++) {
             if (this.list[i] == item) {
@@ -275,7 +275,7 @@ public class List {
     }
 
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
@@ -286,21 +286,21 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size(); i++) {
-            if(this.list[i] == item) {
+            if (this.list[i] == item) {
                 return i;
             }
         }
         return -1;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -341,6 +341,7 @@ public class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+                default:
             }
         }
     }
