@@ -1,9 +1,11 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
-
+/**
+ * List of .
+ * @author Nehru.
+ */
 public class List {
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -59,9 +61,12 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
+
     private int[] list;
     private int indexx;
-
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -89,11 +94,16 @@ public class List {
      * 
      * The method returns void (nothing)
      */
+    /**
+     * { function_description }
+     *
+     * @param      item  The item
+     */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         if (indexx < list.length) {
-        	list[indexx] = item;
-        	indexx += 1;
+            list[indexx] = item;
+            indexx += 1;
         }
     }
 
@@ -103,6 +113,11 @@ public class List {
      * to the objects outside the list
      * 
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         // replace the code below to implement the size method
@@ -129,17 +144,22 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
+    /**
+     * { function_description }
+     *
+     * @param      index  The index
+     */
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= size()) {
-        	System.out.println("Invalid Position Exception");
+            System.out.println("Invalid Position Exception");
         } else {
-	        for (int i = index; i < size() - 1; i++) {
-	        		this.list[i] = this.list[i+1];
-	        }
+            for (int i = index; i < size() - 1; i++) {
+                    this.list[i] = this.list[i+1];
+            }
         this.indexx -= 1;
-    	}
+        }
     }
 
     /*
@@ -153,42 +173,47 @@ public class List {
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
      */
+    /**
+     * { function_description }
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index < size() && index >= 0) {
-        	return this.list[index];
+            return this.list[index];
         }
         return -1;
     }
-
-
     // public void add(int index, int item) {
-    // 	if(size >= (this.list).length) {
-    // 		System.out.println("List is Full");
-    // 	} else {
-    // 		for (int i = index; i <= size()+1; i++) {
-    // 			this.list[i+1] = this.list[i];
-    // 		}
-    // 		this.list[index] = item;
-    // 	}
-    // 	indexx += 1;
+    //  if(size >= (this.list).length) {
+    //      System.out.println("List is Full");
+    //  } else {
+    //      for (int i = index; i <= size()+1; i++) {
+    //          this.list[i+1] = this.list[i];
+    //      }
+    //      this.list[index] = item;
+    //  }
+    //  indexx += 1;
     // }
 
     // public int count(int item) {
-    // 	int count = 0;
-    // 	for (int i = 0; i < size(); i++) {
-    // 		if(this.list[i] == item) {
-    // 			count += 1;
-    // 		}
-    // 	}
-    // 	return count;
+    //  int count = 0;
+    //  for (int i = 0; i < size(); i++) {
+    //      if(this.list[i] == item) {
+    //          count += 1;
+    //      }
+    //  }
+    //  return count;
     // }
 
     // public void addAll(int[] items) {
-    // 	for (int i = 0; i < size(); i++) {
-    // 		this.list[indexx] = items[i];
-    // 		indexx+=1;
-    // 	}
+    //  for (int i = 0; i < size(); i++) {
+    //      this.list[indexx] = items[i];
+    //      indexx+=1;
+    //  }
     // }
     /*
      * What happens when you print an object using println?
@@ -210,12 +235,17 @@ public class List {
      * not all the elements of the array.
      *
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         String s = new String(); 
         s = "[";
         for (int i = 0; i < size()-1; i++) {
-        	s += this.list[i] + ",";
+            s += this.list[i] + ",";
         }
         s += this.list[size()-1] + "]";
         return s;
@@ -227,12 +257,19 @@ public class List {
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
+    /**
+     * { function_description }
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean contains(int item) {
         // Replace the code below
         for (int i = 0; i < size(); i++) {
-        	if (this.list[i] == item) {
-        		return true;
-        	}
+            if (this.list[i] == item) {
+                return true;
+            }
         }
         return false;
     }
@@ -242,17 +279,28 @@ public class List {
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int indexOf(int item) {
         // Replace the code below
         for (int i = 0; i < size(); i++) {
-        	if(this.list[i] == item) {
-        		return i;
-        	}
+            if(this.list[i] == item) {
+                return i;
+            }
         }
         return -1;
     }
-
-	public static void main(String[] args) {
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -295,5 +343,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
