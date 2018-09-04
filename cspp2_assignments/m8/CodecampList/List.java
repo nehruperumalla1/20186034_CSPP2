@@ -133,7 +133,7 @@ public class List {
         if (index >= size()) {
         	System.out.println("Invalid Position Exception");
         } else {
-	        for (int i = index-1; i < size(); i++) {
+	        for (int i = index; i < size(); i++) {
 	        	if (i == size()-1) {
 	        		this.list[i] = 0;
 	        	}
