@@ -138,7 +138,7 @@ public class List {
      */
     public void add(int index, int item) {
         if(index >= size() || index < 0) {
-            System.out.println("List Index Out Of Bounds");
+            System.out.println("Negative Index Exception");
         }
         for (int i = size() - 1; i >= index; i--) {
             this.list[i + 1] = this.list[i];
@@ -394,20 +394,20 @@ public class List {
                 break;
                 case "get":
                 int n = l.get(Integer.parseInt(tokens[1]));
-                if (n != -1) {
-                    System.out.println(n);
-                }
+                System.out.println(n);
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
                 case "addAll":
-                k = tokens[1].split(",");
-                f = new int[k.length];
-                for (int i = 0; i < f.length; i++) {
-                    f[i] = Integer.parseInt(k[i]);
-                }
-                l.addAll(f);
+                if(tokens.length == 2) {
+	                k = tokens[1].split(",");
+	                f = new int[k.length];
+	                for (int i = 0; i < f.length; i++) {
+	                    f[i] = Integer.parseInt(k[i]);
+	                }
+	                l.addAll(f);
+            	}
                 break;
                 case "count":
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
