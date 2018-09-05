@@ -35,6 +35,7 @@ public class Fibonacci
         while (c <= n) {
         	list.add(m);
         	m = m + j;
+        	j = m;
         	c++;
         }
         return list;
