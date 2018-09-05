@@ -137,6 +137,7 @@ public class List {
      * @param      item   The item
      */
     public void add(int index, int item) {
+    	System.out.println(index + "------" + item);
         if(index >= size() || index < 0) {
             System.out.println("Negative Index Exception");
         }
@@ -144,7 +145,6 @@ public class List {
         	for (int i = (size() - 1); i >= index; i--) {
             	this.list[i + 1] = this.list[i];
         	}
-        	System.out.println(item + " === item");
         	this.list[index] = item;
         	indexx += 1;
         }
