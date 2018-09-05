@@ -141,11 +141,11 @@ public class List {
             System.out.println("Negative Index Exception");
         }
         else {
-        	for (int i = (size() - 1); i >= index; i--) {
-            	this.list[i + 1] = this.list[i];
-        	}
-        	this.list[index] = item;
-        	indexx += 1;
+            for (int i = (size() - 1); i >= index; i--) {
+                this.list[i + 1] = this.list[i];
+            }
+            this.list[index] = item;
+            indexx += 1;
         }
     }
 
@@ -289,12 +289,12 @@ public class List {
         String s = new String();
         s = "[";
         if (size() > 0) {
-	        for (int i = 0; i < size() - 1; i++) {
-	            s += this.list[i] + ",";
-	        }
-	        s += this.list[size() - 1];
-	    }
-	    s += "]";
+            for (int i = 0; i < size() - 1; i++) {
+                s += this.list[i] + ",";
+            }
+            s += this.list[size() - 1];
+        }
+        s += "]";
         return s;
     }
     /*
@@ -367,7 +367,7 @@ public class List {
                    toke = tokens[1].split(",");
                 
                 if (toke.length == 1) {
-                	l.add(Integer.parseInt(tokens[1]));
+                    l.add(Integer.parseInt(tokens[1]));
                 } 
                 else {
                     int m = (Integer.parseInt(toke[0]));
@@ -403,13 +403,13 @@ public class List {
                 break;
                 case "addAll":
                 if(tokens.length == 2) {
-	                k = tokens[1].split(",");
-	                f = new int[k.length];
-	                for (int i = 0; i < f.length; i++) {
-	                    f[i] = Integer.parseInt(k[i]);
-	                }
-	                l.addAll(f);
-            	}
+                    k = tokens[1].split(",");
+                    f = new int[k.length];
+                    for (int i = 0; i < f.length; i++) {
+                        f[i] = Integer.parseInt(k[i]);
+                    }
+                    l.addAll(f);
+                }
                 break;
                 case "count":
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
