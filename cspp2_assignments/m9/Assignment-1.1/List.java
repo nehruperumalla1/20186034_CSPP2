@@ -81,6 +81,7 @@ public class List {
 
     public List(int listt) {
         list = new int[listt];
+        size = 0;
     }
 
     /*
