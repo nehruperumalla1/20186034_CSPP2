@@ -140,7 +140,7 @@ public class List {
         if(index >= size() || index < 0) {
             System.out.println("Negative Index Exception");
         }
-        for (int i = size() - 1; i >= index; i--) {
+        for (int i = (indexx - 1); i >= index; i--) {
         	System.out.println("hai");
             this.list[i + 1] = this.list[i];
         }
