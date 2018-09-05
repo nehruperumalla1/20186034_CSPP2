@@ -286,10 +286,13 @@ public class List {
         // Replace the code below
         String s = new String();
         s = "[";
-        for (int i = 0; i < size() - 1; i++) {
-            s += this.list[i] + ",";
-        }
-        s += this.list[size() - 1] + "]";
+        if (size() > 0) {
+	        for (int i = 0; i < size() - 1; i++) {
+	            s += this.list[i] + ",";
+	        }
+	        s += this.list[size() - 1];
+	    }
+	    s += "]";
         return s;
     }
     /*
