@@ -28,7 +28,7 @@ public class Fibonacci
      */
     public static List fib(int n) {
         // todo - complete this method
-        List list = new List();
+        List list = new List(n);
         int m = 0;
         int j = 1;
         int k = 0;
