@@ -141,6 +141,7 @@ public class List {
             System.out.println("Negative Index Exception");
         }
         for (int i = size() - 1; i >= index; i--) {
+        	System.out.println("hai");
             this.list[i + 1] = this.list[i];
         }
         this.list[index] = item;
@@ -222,7 +223,7 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if (index >= size() && index < 0) {
+        if (index >= size() || index < 0) {
             System.out.println("Invalid Position Exception");
         } else {
             for (int i = index; i < size() - 1; i++) {
