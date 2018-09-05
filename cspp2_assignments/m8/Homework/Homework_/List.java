@@ -144,6 +144,7 @@ public class List {
         	for (int i = (size() - 1); i >= index; i--) {
             	this.list[i + 1] = this.list[i];
         	}
+        	System.out.println(item + " === item");
         	this.list[index] = item;
         	indexx += 1;
         }
