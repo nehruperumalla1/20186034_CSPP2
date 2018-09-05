@@ -122,9 +122,8 @@ public class List {
         list[indexx] = item;
         indexx += 1;
     }
-    
     /**
-     * { function_description }
+     * { function_description }.
      */
     private void resize() {
         this.list = Arrays.copyOf(this.list, list.length * 2);
@@ -363,7 +362,6 @@ public class List {
                 case "add":
                 if ((tokens.length) == 2) {
                    toke = tokens[1].split(",");
-                
                 if (toke.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
                 } else {
