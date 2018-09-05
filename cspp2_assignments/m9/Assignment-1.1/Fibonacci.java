@@ -32,8 +32,14 @@ public class Fibonacci
         int c = 0;
         int m = 0;
         int j = 1;
-        for (int i = 2; i < n + 2; i++) {
-        	list.add(i-2);
+        int k = 0;
+        list.add(m);
+        list.add(j);
+        for (int i = 2; i < n; i++) {
+        	k = m + j;
+        	list.add(k);
+        	j = k;
+        	m = j;
         }
         return list;
     }
