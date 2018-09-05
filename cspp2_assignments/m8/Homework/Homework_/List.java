@@ -137,8 +137,7 @@ public class List {
      * @param      item   The item
      */
     public void add(int index, int item) {
-    	System.out.println(index + "------" + item);
-        if(index >= size() || index < 0) {
+        if(index > size() || index < 0) {
             System.out.println("Negative Index Exception");
         }
         else {
