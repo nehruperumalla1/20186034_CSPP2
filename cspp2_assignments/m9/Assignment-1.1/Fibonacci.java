@@ -29,12 +29,11 @@ public class Fibonacci
     public static List fib(int n) {
         // todo - complete this method
         List list = new List();
-        int c = 0;
         int m = 0;
         int j = 1;
         int k = 0;
         for (int i = 0; i < n; i++) {
-        	list.add(k);
+        	list.add(m);
         	k = m + j;
         	m = j;
         	j = k;
