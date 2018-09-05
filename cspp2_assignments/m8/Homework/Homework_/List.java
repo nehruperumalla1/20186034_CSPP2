@@ -122,25 +122,23 @@ public class List {
         list[indexx] = item;
         indexx += 1;
     }
+    
     /**
      * { function_description }
-     *
-     * @param      item  The item
      */
     private void resize() {
-        this.list = Arrays.copyOf(this.list, list.length*2);
+        this.list = Arrays.copyOf(this.list, list.length * 2);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      index  The index
      * @param      item   The item
      */
-    public void add(int index, int item) {
-        if(index > size() || index < 0) {
+    public void add(final int index, final int item) {
+        if (index > size() || index < 0) {
             System.out.println("Negative Index Exception");
-        }
-        else {
+        } else {
             for (int i = (size() - 1); i >= index; i--) {
                 this.list[i + 1] = this.list[i];
             }
@@ -150,16 +148,16 @@ public class List {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item  The item
      *
      * @return     { description_of_the_return_value }
      */
-    public int count(int item) {
+    public int count(final int item) {
         int count = 0;
         for (int i = 0; i < size(); i++) {
-            if(this.list[i] == item) {
+            if (this.list[i] == item) {
                 count += 1;
             }
         }
@@ -172,7 +170,7 @@ public class List {
      * @param      items  The items
      */
 
-    public void addAll(int[] items) {
+    public void addAll(final int[] items) {
         if (items.length + size() >= list.length) {
             resize();
         }
@@ -368,8 +366,7 @@ public class List {
                 
                 if (toke.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
-                } 
-                else {
+                } else {
                     int m = (Integer.parseInt(toke[0]));
                     int h = (Integer.parseInt(toke[1]));
                     l.add(m, h);
@@ -402,7 +399,7 @@ public class List {
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
                 case "addAll":
-                if(tokens.length == 2) {
+                if (tokens.length == 2) {
                     k = tokens[1].split(",");
                     f = new int[k.length];
                     for (int i = 0; i < f.length; i++) {
