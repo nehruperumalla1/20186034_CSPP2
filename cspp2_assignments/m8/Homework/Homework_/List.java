@@ -358,13 +358,17 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                if (tokens.length == 2) {
-                    l.add(Integer.parseInt(tokens[1]));
-                } else {
-                    toke = tokens[1].split(",");
+                if ((tokens.length) == 2) {
+                   toke = tokens[1].split(",");
+                
+                if (toke.length == 1) {
+                	l.add(Integer.parseInt(tokens[1]));
+                } 
+                else {
                     int m = (Integer.parseInt(toke[0]));
                     int h = (Integer.parseInt(toke[1]));
                     l.add(m, h);
+                }
                 }
                 break;
                 case "size":
