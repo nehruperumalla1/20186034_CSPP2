@@ -141,7 +141,7 @@ public class List {
             System.out.println("Negative Index Exception");
         }
         for (int i = (size() - 1); i >= index; i--) {
-        	System.out.println(size());
+        	System.out.println(index + " " + i);
             this.list[i + 1] = this.list[i];
         }
         this.list[index] = item;
