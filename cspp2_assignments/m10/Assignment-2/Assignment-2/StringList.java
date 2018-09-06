@@ -179,7 +179,7 @@ public class StringList implements StringListInterface{
         	for (int i = index; i < size - 1; i++) {
         		list[i] = list[i + 1];
         	}
-        	size++;
+        	size--;
         } else {
         	System.out.println("Invalid Position Exception");
         }
