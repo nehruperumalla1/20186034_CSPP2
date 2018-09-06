@@ -2,8 +2,8 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 /**
- * List of .
- * @author Nehru.
+ * List of Integers.
+ * @author Nehru Perumalla.
  */
 public class List {
     //Implement all the methods mentioned to build a ListADT
@@ -62,15 +62,15 @@ public class List {
      * class variables with some default values.
      */
     /**
-     * { var_description }.
+     * Variable for 10 Value.
      */
     private static final int TEN = 10;
     /**
-     * { var_description }.
+     * Creating Integer Array List.
      */
     private int[] list;
     /**
-     * { var_description }.
+     * Create indexx variable.
      */
     private int indexx;
     /**
@@ -91,9 +91,9 @@ public class List {
         this.indexx = 0;
     }
     /**
-     * { function_description }.
+     * Return Int Value.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { Integer return_value }
      */
     public int value() {
         return TEN;
@@ -110,7 +110,7 @@ public class List {
      * The method returns void (nothing)
      */
     /**
-     * { function_description }.
+     * Add Method.
      *
      * @param      item  The item
      */
@@ -123,13 +123,13 @@ public class List {
         indexx += 1;
     }
     /**
-     * { function_description }.
+     * Resize Methods.
      */
     private void resize() {
         this.list = Arrays.copyOf(this.list, list.length * 2);
     }
     /**
-     * { function_description }.
+     * Add at Particular Index.
      *
      * @param      index  The index
      * @param      item   The item
@@ -147,7 +147,7 @@ public class List {
     }
 
     /**
-     * { function_description }.
+     * Count Method.
      *
      * @param      item  The item
      *
@@ -164,7 +164,7 @@ public class List {
     }
 
     /**
-     * Adds all.
+     * Adds all elements in array.
      *
      * @param      items  The items
      */
@@ -185,9 +185,9 @@ public class List {
      * The method returns an int. Empty list should return 0.
      */
     /**
-     * { function_description }.
+     * Size Method.
      *
-     * @return     { description_of_the_return_value }
+     * @return     Returns Size.
      */
     public int size() {
         // replace the code below to implement the size method
@@ -214,7 +214,7 @@ public class List {
      * The method returns void (nothing)
      */
     /**
-     * { function_description }.
+     * Remove Method.
      *
      * @param      index  The index
      */
@@ -243,11 +243,11 @@ public class List {
      * number of items in the list? Would size variable be useful?
      */
     /**
-     * { function_description }.
+     * Get element at Index.
      *
      * @param      index  The index
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns Element at Index }
      */
     public int get(final int index) {
         // Replace the code below to write the code for get
@@ -304,7 +304,7 @@ public class List {
      * the item exists and otherwise false
      */
     /**
-     * { function_description }.
+     * { Contains Method }.
      *
      * @param      item  The item
      *
@@ -342,7 +342,7 @@ public class List {
         return -1;
     }
     /**
-     * { function_description }.
+     * Main Function.
      *
      * @param      args  The arguments
      */
