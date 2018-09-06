@@ -2,18 +2,18 @@
 import java.util.Arrays;
 interface StringListInterface
 {
-	 public void add(String item);
-	 public void addAll(String items[]);
-	 public String get(int index);
-	 public int size();
-	 public void remove(int index);
-	 public boolean contains(String item);
-	 public int indexOf(String item);
+     public void add(String item);
+     public void addAll(String items[]);
+     public String get(int index);
+     public int size();
+     public void remove(int index);
+     public boolean contains(String item);
+     public int indexOf(String item);
 }
 //Write a StringList class which implements StringListInterface 
 
 public class StringList implements StringListInterface{
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -129,17 +129,17 @@ public class StringList implements StringListInterface{
     array to the end of list*/
    
     public void addAll(String[] items) {
-    	if(size + items.length >= list.length) {
-    		resize();
-    	}
-		for (int i = 0; i < items.length; i++) {
-			add(items[i]);
-		}
-	}
+        if(size + items.length >= list.length) {
+            resize();
+        }
+        for (int i = 0; i < items.length; i++) {
+            add(items[i]);
+        }
+    }
 
-	public void resize() {
-		list = Arrays.copyOf(list, list.length * 2);
-	}
+    public void resize() {
+        list = Arrays.copyOf(list, list.length * 2);
+    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
@@ -176,12 +176,12 @@ public class StringList implements StringListInterface{
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < size) {
-        	for (int i = index; i < size - 1; i++) {
-        		list[i] = list[i + 1];
-        	}
-        	size--;
+            for (int i = index; i < size - 1; i++) {
+                list[i] = list[i + 1];
+            }
+            size--;
         } else {
-        	System.out.println("Invalid Position Exception");
+            System.out.println("Invalid Position Exception");
         }
        
     }
@@ -199,7 +199,7 @@ public class StringList implements StringListInterface{
      */
     public String get(int index) {
         if(index < size && index >= 0) {
-        	return list[index];
+            return list[index];
         }
         return "-1";
     }
@@ -227,13 +227,13 @@ public class StringList implements StringListInterface{
     public String toString() {
         String str = "[";
         if (size > 0) {
-	        for (int i = 0; i < size-1; i++) {
-	       		str += list[i] + ",";	
-	        }
-        	str += list[size-1];
-   		}
-   		str += "]";
-   		return str;
+            for (int i = 0; i < size-1; i++) {
+                str += list[i] + ",";   
+            }
+            str += list[size-1];
+        }
+        str += "]";
+        return str;
     }
     
     /*
@@ -253,9 +253,9 @@ public class StringList implements StringListInterface{
      */
     public int indexOf(String item) {
         for (int i = 0; i < size; i++) {
-        	if (list[i].equals(item)) {
-        		return i;
-        	} 
+            if (list[i].equals(item)) {
+                return i;
+            } 
         }
         return -1;
     }
