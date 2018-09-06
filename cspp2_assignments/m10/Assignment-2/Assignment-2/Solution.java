@@ -15,7 +15,7 @@ public final class Solution {
         //Constructor..
     }
     /**
-     * { function_description }.
+     * { Main Function }.
      *
      * @param      args  The arguments
      */
