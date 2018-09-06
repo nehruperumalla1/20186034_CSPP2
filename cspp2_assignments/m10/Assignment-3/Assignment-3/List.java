@@ -47,6 +47,9 @@ public class List<E> {
     array to the end of list*/
     public void addAll(E[] items) {
         //Write logic for addAll method
+        if (items.length + size >= list.length) {
+        	resize();
+        }
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
