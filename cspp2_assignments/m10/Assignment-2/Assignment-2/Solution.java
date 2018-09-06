@@ -9,6 +9,12 @@ import java.util.Scanner;
  */
 public class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Constructor..
+    }
+    /**
      * { function_description }.
      *
      * @param      args  The arguments
