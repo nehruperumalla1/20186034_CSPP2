@@ -7,16 +7,22 @@ import java.util.Scanner;
 // A Class is implemented for Student details /**
 //  * Class for student. */
 //
+/**
+ * Class for student.
+ */
 class Student {
+    /**
+     * { var_description }.
+     */
     private String name;
     /**
      * Student.
      *
      * @param      name  The name
      */
-    public Student(final String name) {
+    public Student(final String name1) {
     //A constructor used to initialize the instance variables
-        this.name = name;
+        this.name = name1;
     }
     /**
      * Gets the name.
@@ -36,7 +42,7 @@ class Student {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(Object other) { 
+    public boolean equals(final Object other) {
     //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
@@ -60,7 +66,13 @@ class Student {
  */
 public class Solution {
     /**
-     * { function_description }
+     * Constructs the object.
+     */
+    private Solution() {
+        //Constructor.
+    }
+    /**
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -69,7 +81,7 @@ public class Solution {
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
 
-        switch(objectType) {
+        switch (objectType) {
             case "S"://This case will be executed for String type list
                 List<String> listString = new List();
                 while (stdin.hasNext()) {
@@ -77,8 +89,9 @@ public class Solution {
                     String line = stdin.nextLine();
                     // split the line using space
                     String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
-                    switch(tokens[0]) {
+                    // based on the list operation invoke the corresponding
+                    //method
+                    switch (tokens[0]) {
                         case "add":
                             listString.add(tokens[1]);
                         break;
@@ -238,7 +251,8 @@ public class Solution {
                     String line = stdin.nextLine();
                     // split the line using space
                     String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
+                    // based on the list operation invoke the corresponding
+                    //method
                     switch (tokens[0]) {
                         case "add":
                             listCharacter.add(tokens[1].charAt(0));
