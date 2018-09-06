@@ -33,8 +33,15 @@ class Student {
     //Getter method which returns the value of instance variable
         return this.name;
     }
-
-    @Override
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int hashCode() {
+        return 0;
+    }
+    
     /**
      * { function_description }
      *
@@ -42,6 +49,7 @@ class Student {
      *
      * @return     { description_of_the_return_value }
      */
+    @Override
     public boolean equals(final Object other) {
     //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
