@@ -1,19 +1,32 @@
+/**
+ * @author Nehru.
+ */
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-//A Class is implemented for Student details
+//
+// A Class is implemented for Student details /**
+//  * Class for student. */
+//
 class Student {
 	private String name;
-	
-	public Student(String name) {//A constructor used to initialize the instance variables
+	/**
+	 * Student.
+	 */
+	public Student(final String name) {//A constructor used to initialize the instance variables
 		this.name = name;
 	}
-
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {//Getter method which returns the value of instance variable
 		return this.name;
 	}
 
 	@Override
-	public boolean equals(Object other) { //This method is to check if two students names are equal or not
+	public boolean equals(Object other) { 
+	//This method is to check if two students names are equal or not
 		if (!(other instanceof Student)) {
 			return false;
 		}
@@ -326,7 +339,8 @@ public class Solution {
 		                listStudent.remove(Integer.parseInt(tokens[1]));
 		                break;
 		                case "indexOf":
-		                System.out.println(listStudent.indexOf(new Student(tokens[1])));
+		                System.out.println(listStudent.indexOf(new
+		                 Student(tokens[1])));
 		                break;
 		                case "get":
 		                System.out.println(listStudent.get(Integer.parseInt(tokens[1])));
