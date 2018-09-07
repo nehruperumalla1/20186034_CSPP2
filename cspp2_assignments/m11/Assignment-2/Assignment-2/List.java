@@ -39,7 +39,9 @@ public class List<E> {
             resize();
         } else {
             list[indexx] = item;
+            indexx += 1;
         }
+
     }
     /*Inserts all the elements of specified int
     array to the end of list*/
