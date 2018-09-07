@@ -354,7 +354,7 @@ public class List {
      */
     public boolean equals(final List list1) {
     // Replace the code below
-        return list1.toString().equals(list.toString());
+        return list1.toString().equals(list);
     }
     /*
     * Removes all the elements from list
