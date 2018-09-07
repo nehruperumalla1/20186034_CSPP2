@@ -92,7 +92,12 @@ public class List {
      *
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    /**
+     * { Adds the element }.
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (indexx > list.length) {
             resize();
@@ -100,7 +105,9 @@ public class List {
         list[indexx] = item;
         indexx += 1;
     }
-
+    /**
+     * { Resize the List }.
+     */
     public void resize() {
         this.list = Arrays.copyOf(this.list, list.length * 2);
     }
@@ -111,6 +118,11 @@ public class List {
      *
      * The method returns an int. Empty list should return 0.
      *
+     */
+    /**
+     * { Size of the List }
+     *
+     * @return     { Returns int }
      */
     public int size() {
         // replace the code below to implement the size method
@@ -131,7 +143,12 @@ public class List {
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
      */
-    public void remove(int index) {
+    /**
+     * { Remove item at that index }.
+     *
+     * @param      index  The index
+     */
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index >= size() || index < 0) {
@@ -153,7 +170,14 @@ public class List {
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
      */
-    public int get(int index) {
+    /**
+     * { Get the item at given index }.
+     *
+     * @param      index  The index
+     *
+     * @return     { Returns int Value. }
+     */
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index < size() && index >= 0) {
             return this.list[index];
@@ -174,6 +198,11 @@ public class List {
      * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
      * the list and not all the elements of the array.
      */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         String s = new String();
@@ -192,7 +221,14 @@ public class List {
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      */
-    public boolean contains(int item) {
+    /**
+     * { Contains Method }.
+     *
+     * @param      item  The item
+     *
+     * @return     { Returns Boolean }
+     */
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size(); i++) {
             if (this.list[i] == item) {
@@ -205,7 +241,14 @@ public class List {
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
      */
-    public int indexOf(int item) {
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size(); i++) {
             if (this.list[i] == item) {
@@ -215,10 +258,14 @@ public class List {
         return -1;
     }
     /*
-    Inserts all the elements of specified int array to the end of list    
+    Inserts all the elements of specified int array to the end of list
     */
-    public void addAll(int[] newArray)
-    {
+    /**
+     * Adds all.
+     *
+     * @param      newArray  The new array
+     */
+    public void addAll(final int[] newArray) {
         // write the logic
         if (newArray.length + size() >= list.length) {
             resize();
@@ -249,12 +296,19 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    public List subList(int start, int end) 
-    {
+    /**
+     * SubList Method.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     { Returns List }
+     */
+    public List subList(final int start, final int end) {
     // write the logic for subList
         List l1 = new List();
         if (start >= 0 && end >= 0 && start <= end) {
-            if (start == end ) {
+            if (start == end) {
                 return new List();
             } else {
                 for (int i = start; i < end; i++) {
@@ -270,8 +324,14 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list1)
-    {
+    /**
+     * Equals Method.
+     *
+     * @param      list1  The list 1
+     *
+     * @return     { return Boolean }
+     */
+    public boolean equals(final List list1) {
     // Replace the code below
         int j = 0;
         for (int i = 0; i < list1.size(); i++) {
@@ -363,12 +423,13 @@ public class List {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         int[] a = new int[t2.length];
-                        for(int i = 0; i < t2.length; i++)
+                        for (int i = 0; i < t2.length; i++) {
                             a[i] = Integer.parseInt(t2[i]);
+                        }
                         l.removeAll(a);
                     }
                 break;
-                case "subList": {
+                case "subList":
                     if (tokens.length != 2) {
                         break;
                     }
@@ -379,7 +440,6 @@ public class List {
                         System.out.println(object);
                     }
                     break;
-                }
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
