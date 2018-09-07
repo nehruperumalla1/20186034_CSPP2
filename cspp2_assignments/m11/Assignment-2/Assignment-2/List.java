@@ -143,8 +143,11 @@ public class List<E> {
      */
     public String toString() {
         String str = "[";
-        for (int i = 0; i < size() - 1; i++) {
+        if (indexx > 0) {
+        	for (int i = 0; i < size() - 1; i++) {
             str += list[i] + ",";
+        	}
+        	str += list[size() - 1];
         }
         str += "]";
         return str;
