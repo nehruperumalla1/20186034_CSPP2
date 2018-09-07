@@ -1,3 +1,7 @@
+/**
+ * Generic List.
+ * @author Nehru Perumalla.
+ */
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 //
@@ -13,7 +17,7 @@ class Student {
      *
      * @param      name1  The name 1
      */
-    public Student(final String name1) {
+    Student(final String name1) {
         this.name = name1;
     }
     /**
@@ -54,7 +58,7 @@ class Student {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructor.
      */
