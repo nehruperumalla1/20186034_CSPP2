@@ -7,6 +7,9 @@ import java.util.Scanner;
 //
 // A Class is implemented for Student details
 //
+/**
+ * Class for student.
+ */
 class Student {
     /**
      * { String Name }.
