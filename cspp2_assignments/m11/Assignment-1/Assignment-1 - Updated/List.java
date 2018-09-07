@@ -323,15 +323,17 @@ public class List {
     public List subList(final int start, final int end) {
     // write the logic for subList
         List l1 = new List();
-        if (start >= 0 && end >= 0 && start <= end) {
-            if (start == end) {
-            } else {
-                for (int i = start; i < end; i++) {
-                    l1.add(list[i]);
-                }
-                return l1;
-            }
-        }
+        if (start < size() && end < size()) {
+	        if (start >= 0 && end >= 0 && start <= end) {
+	            if (start == end) {
+	            } else {
+	                for (int i = start; i < end; i++) {
+	                    l1.add(list[i]);
+	                }
+	                return l1;
+	            }
+	        }
+	    }
         System.out.println("Index Out of Bounds Exception");
         return null;
     }
