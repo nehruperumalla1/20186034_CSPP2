@@ -102,7 +102,7 @@ public class List {
     }
 
     public void resize() {
-    	this.list = Arrays.copyOf(this.list, list.length * 2);
+        this.list = Arrays.copyOf(this.list, list.length * 2);
     }
 
     /*
@@ -228,21 +228,20 @@ public class List {
         }
     }
     /*
-     Removes all of its elements that are contained in the specified int 
-     array.    
+     Removes all of its elements that are contained in the specified int
+     array.
     */
-     public void removeAll(int[] newArray)
-     {
+    public void removeAll(int[] newArray)
+    {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
             for (int j = 0; j < this.size(); j++) {
-                if( newArray[i] == this.get(j)) {
+                if ( newArray[i] == this.get(j)) {
                     remove(j);
                 }  
             } 
         }
-
-     }
+    }
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
@@ -253,30 +252,30 @@ public class List {
     public List subList(int start, int end) 
     {
     // write the logic for subList
-    	List l1 = new List();
+        List l1 = new List();
         if (start >= 0 && end >= 0 && start <= end) {
-        	if (start == end ) {
+            if (start == end ) {
                 return new List();
-            }else  {
-        		for (int i = start; i < end; i++) {
-        		l1.add(list[i]);
-        		}
+            } else {
+                for (int i = start; i < end; i++) {
+                l1.add(list[i]);
+                }
                 return l1;
-        	}
+            }
         }
-    	System.out.println("Index Out of Bounds Exception");
+        System.out.println("Index Out of Bounds Exception");
         return null;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list1 ) 
+    public boolean equals(List list1)
     {
     // Replace the code below
         int j = 0;
-    	for (int i = 0; i < list1.size(); i++) {
-            if(contains(list1.get(i))) {
+        for (int i = 0; i < list1.size(); i++) {
+            if (contains(list1.get(i))) {
                 j++;
             }
         }
@@ -287,13 +286,19 @@ public class List {
     * Think about this case and make the method
     * the simpler.
     */
-    public void clear()
-    {
-    	indexx = 0;
 
+    /**
+     * Clear Method to clear all the elements.
+     */
+    public void clear() {
+        indexx = 0;
     }
-
-    public static void main(String[] args) {
+    /**
+     * Main Method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -308,7 +313,7 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Integer.parseInt(tokens[1]));
@@ -348,8 +353,8 @@ public class List {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         int[] temp = new int[t1.length];
-                        for(int i = 0; i < temp.length; i++) {
-                            temp[i]=Integer.parseInt(t1[i]);
+                        for (int i = 0; i < temp.length; i++) {
+                            temp[i] = Integer.parseInt(t1[i]);
                         }
                         l.addAll(temp);
                     }
@@ -364,19 +369,22 @@ public class List {
                     }
                 break;
                 case "subList": {
-                    if (tokens.length != 2) break;
+                    if (tokens.length != 2) {
+                        break;
+                    }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
-                    if (object != null) 
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
                 }
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Integer.parseInt(lt[k]));
                         }
                         System.out.println(l.equals(l2));
