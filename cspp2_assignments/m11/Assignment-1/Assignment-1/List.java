@@ -328,7 +328,7 @@ public class List {
                 return new List();
             } else {
                 for (int i = start; i < end; i++) {
-                l1.add(list[i]);
+                    l1.add(list[i]);
                 }
                 return l1;
             }
