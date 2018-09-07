@@ -238,9 +238,11 @@ public class List {
      {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
-            if (indexOf(newArray[i]) != -1 ) {
-        	   remove(indexOf(newArray[i]));
-            }
+            for (int j = 0; j < this.size(); j++) {
+                if( newArray[i] == this.get(j)) {
+                    remove(j);
+                }  
+            } 
         }
 
      }
