@@ -323,7 +323,7 @@ public class List {
     public List subList(final int start, final int end) {
     // write the logic for subList
         List l1 = new List();
-        if (start < size() && end < size()) {
+        if (start < size() || end < size()) {
 	        if (start >= 0 && end >= 0 && start <= end) {
 	            if (start == end) {
 	            } else {
