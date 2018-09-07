@@ -185,9 +185,6 @@ public class List {
             s += this.list[size() - 1];
         }
         s += "]";
-        if (size() == 1 && list[0] == 0) {
-            s += "\nInvalid Position Exception";
-        }
         return s;
     } 
     /*
