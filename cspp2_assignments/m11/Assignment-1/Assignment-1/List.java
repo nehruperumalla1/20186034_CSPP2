@@ -274,17 +274,15 @@ public class List {
     public boolean equals(List list1 ) 
     {
     // Replace the code below
-    	int j = 0;
-    	for (int i = 0; i < this.list.length; i++) {
-    		if (this.list[i] == list1.get(j)) {
-    			j += 1;
-    			if (j == list1.size()) {
-    				return true;
-    			}
-    		} else {
-    			j = 0;
-    		}
-    	}
+        int j = 0;
+    	for (int i = 0; i < list1.size(); i++) {
+            if(contains(list1.get(i))) {
+                j++;
+            }
+        }
+        if (j == list1.size()) {
+            return true;
+        }
     return false;
     }
     /*
