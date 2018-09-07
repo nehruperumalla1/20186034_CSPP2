@@ -299,13 +299,13 @@ public class List {
         // write the logic
         int j = 0;
         for (int i = 0; i < newArray.length; i++) {
-        	j = 0;
+            j = 0;
             while (j < size()) {
                 if (newArray[i] == this.get(j)) {
                     remove(j);
                     j -= 1;
                 } else {
-                	j += 1;
+                    j += 1;
                 }
             }
         }
@@ -329,16 +329,14 @@ public class List {
     // write the logic for subList
         List l1 = new List();
         if (start < size() || end < size()) {
-	        if (start >= 0 && end >= 0 && start <= end) {
-	            if (start == end) {
-	            } else {
-	                for (int i = start; i < end; i++) {
-	                    l1.add(list[i]);
-	                }
-	                return l1;
-	            }
-	        }
-	    }
+            if (start >= 0 && end >= 0 && start <= end) {
+
+                    for (int i = start; i < end; i++) {
+                        l1.add(list[i]);
+                    }
+                    return l1;
+            }
+        }
         System.out.println("Index Out of Bounds Exception");
         return null;
     }
@@ -358,10 +356,12 @@ public class List {
         int j = 0;
         for (int i = 0; i < size(); i++) {
             if (list[i] == list1.get(j)) {
-            	j++;
-            	if (j == list1.size()) {
-            		return true;
-            	}
+                j++;
+                if (j == list1.size()) {
+                    return true;
+                }
+            } else {
+                j = 0;
             }
         }
         return false;
