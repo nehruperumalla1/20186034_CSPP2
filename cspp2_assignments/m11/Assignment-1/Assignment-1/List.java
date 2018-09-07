@@ -280,10 +280,7 @@ public class List {
                 j++;
             }
         }
-        if (j == list1.size()) {
-            return true;
-        }
-    return false;
+        return (j == list1.size());
     }
     /*
     * Removes all the elements from list
