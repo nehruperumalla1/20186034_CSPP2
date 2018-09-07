@@ -223,7 +223,7 @@ public class List<E> {
      */
     public boolean equals(List<E> listdata)
     {
-        return listdata.toString().equals(list.toString());
+        return listdata.toString().equals(this.toString());
     }
     /*Removes all the elements from list*/
     public void clear()
