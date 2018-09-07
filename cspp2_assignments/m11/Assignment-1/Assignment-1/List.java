@@ -238,7 +238,9 @@ public class List {
      {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
-        	remove(newArray[i]);
+            if (indexOf(newArray[i]) != -1 ) {
+        	   remove(indexOf(newArray[i]));
+            }
         }
 
      }
