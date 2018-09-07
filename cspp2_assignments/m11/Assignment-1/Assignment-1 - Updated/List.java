@@ -297,10 +297,14 @@ public class List {
      */
     public void removeAll(final int[] newArray) {
         // write the logic
+        int j = 0;
         for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < this.size(); j++) {
+            while (j < size()) {
                 if (newArray[i] == this.get(j)) {
                     remove(j);
+                    j -= 1;
+                } else {
+                	j += 1;
                 }
             }
         }
