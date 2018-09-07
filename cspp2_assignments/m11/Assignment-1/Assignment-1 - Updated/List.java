@@ -299,6 +299,7 @@ public class List {
         // write the logic
         int j = 0;
         for (int i = 0; i < newArray.length; i++) {
+        	j = 0;
             while (j < size()) {
                 if (newArray[i] == this.get(j)) {
                     remove(j);
