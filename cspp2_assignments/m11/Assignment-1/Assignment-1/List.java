@@ -254,7 +254,7 @@ public class List {
     {
     // write the logic for subList
     	List l1 = new List();
-        if (start >= 0 && end >= 0) {
+        if (start >= 0 && end >= 0 && start <= end) {
         	if (start == end ) {
                 return new List();
             }else  {
