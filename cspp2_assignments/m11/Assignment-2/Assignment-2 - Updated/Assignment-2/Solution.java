@@ -1,14 +1,27 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-//A Class is implemented for Student details
+//
+// A Class is implemented for Student details
+//
 class Student {
+    /**
+     * { String Name }.
+     */
     private String name;
-
+    /**
+     * Constructs the object.
+     *
+     * @param      name1  The name 1
+     */
     public Student(final String name1) {
         this.name = name1;
     }
-
-    public String getName() {
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
+    String getName() {
         return this.name;
     }
     /**
@@ -43,7 +56,13 @@ class Student {
  */
 public class Solution {
     /**
-     * { List Integer }
+     * Constructor.
+     */
+    private Solution() {
+        //Empty Constructor.
+    }
+    /**
+     * { List Integer }.
      *
      * @param      stdin  The stdin
      */
@@ -114,7 +133,9 @@ public class Solution {
                     }
                 break;
                 case "subList":
-                    if (tokens.length != 2) break;
+                    if (tokens.length != 2) {
+                        break;
+                    }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(
                         arrstring3[0]), Integer.parseInt(arrstring3[1]));
