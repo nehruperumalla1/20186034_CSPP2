@@ -26,7 +26,6 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -48,21 +47,31 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
+     */
+    /**
+     * { Static Variable }.
      */
     private static final int TEN = 10;
-
+    /**
+     * { Integer Array }.
+     */
     private int[] list;
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+     * Index.
+     */
     private int indexx;
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
+    /**
+     * Constructs the object.
+     */
     public List() {
-
         // what are the two variables to be initialized here? think about the
         // private variables described above. What should be the default values?
         // In the case of the list, it should be empty but it should be
@@ -120,7 +129,7 @@ public class List {
      *
      */
     /**
-     * { Size of the List }
+     * { Size of the List }.
      *
      * @return     { Returns int }
      */
@@ -215,7 +224,7 @@ public class List {
         }
         s += "]";
         return s;
-    } 
+    }
     /*
      * Contains return true if the list has the item passed as an argument to
      * the method So, iterate through the list and return true if the item
@@ -278,21 +287,25 @@ public class List {
      Removes all of its elements that are contained in the specified int
      array.
     */
-    public void removeAll(int[] newArray)
-    {
+    /**
+     * Removes all.
+     *
+     * @param      newArray  The new array
+     */
+    public void removeAll(final int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
             for (int j = 0; j < this.size(); j++) {
-                if ( newArray[i] == this.get(j)) {
+                if (newArray[i] == this.get(j)) {
                     remove(j);
-                }  
+                }
             } 
         }
     }
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
-    second parameter indicates the endIndex. Returns null and print 
+    second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
