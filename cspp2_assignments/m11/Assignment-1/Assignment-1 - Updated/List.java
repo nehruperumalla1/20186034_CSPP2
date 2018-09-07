@@ -354,18 +354,7 @@ public class List {
      */
     public boolean equals(final List list1) {
     // Replace the code below
-        int j = 0;
-        for (int i = 0; i < size(); i++) {
-            if (list[i] == list1.get(j)) {
-                j++;
-                if (j == list1.size()) {
-                    return true;
-                }
-            } else {
-                j = 0;
-            }
-        }
-        return false;
+        return list1.toString().equals(list.toString());
     }
     /*
     * Removes all the elements from list
