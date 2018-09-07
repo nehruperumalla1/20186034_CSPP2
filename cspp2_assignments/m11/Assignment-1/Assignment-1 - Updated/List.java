@@ -325,7 +325,6 @@ public class List {
         List l1 = new List();
         if (start >= 0 && end >= 0 && start <= end) {
             if (start == end) {
-                return new List();
             } else {
                 for (int i = start; i < end; i++) {
                     l1.add(list[i]);
