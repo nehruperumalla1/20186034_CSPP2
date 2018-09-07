@@ -253,7 +253,7 @@ public class List {
     {
     // write the logic for subList
     	List l1 = new List();
-    	if ((start >= 0 && start < indexx) && (end < indexx && end >= 0)) {
+    	if ((start >= 0 && start < indexx) && (end < indexx && end > 0)) {
     		for (int i = start; i < end; i++) {
     		l1.add(list[i]);
     		}
