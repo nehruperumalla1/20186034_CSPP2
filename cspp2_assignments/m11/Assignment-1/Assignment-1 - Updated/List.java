@@ -349,12 +349,15 @@ public class List {
     public boolean equals(final List list1) {
     // Replace the code below
         int j = 0;
-        for (int i = 0; i < list1.size(); i++) {
-            if (contains(list1.get(i))) {
-                j++;
+        for (int i = 0; i < size(); i++) {
+            if (list[i] == list1.get(j)) {
+            	j++;
+            	if (j == list1.size()) {
+            		return true;
+            	}
             }
         }
-        return (j == list1.size());
+        return false;
     }
     /*
     * Removes all the elements from list
