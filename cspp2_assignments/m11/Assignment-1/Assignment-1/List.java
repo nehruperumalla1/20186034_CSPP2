@@ -1,7 +1,10 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
+/**
+ * List of Integers.
+ * @author Nehru.
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -299,7 +302,7 @@ public class List {
                 if (newArray[i] == this.get(j)) {
                     remove(j);
                 }
-            } 
+            }
         }
     }
     /*
