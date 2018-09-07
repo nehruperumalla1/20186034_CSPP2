@@ -224,6 +224,7 @@ public class List<E> {
         int count = 0;
         for (int i = 0; i < listdata.size(); i++) {
             if(contains(listdata.get(i))) {
+            	System.out.println("Hai");
                 count++;
             }
         }
