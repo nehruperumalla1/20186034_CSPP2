@@ -18,12 +18,7 @@ class Set {
     }
 
     public boolean contains(int item) {
-    	for (int i = 0; i < size; i++) {
-    		if (item == set[i]) {
-    			return true;
-    		}
-    	}
-    	return false;
+    	return indexOf(item) != -1;
     }
 
     public String toString() {
@@ -72,7 +67,7 @@ class Set {
     	if (this.size() != 0 && sett.size() != 0) {
 	    	for (int i = 0; i < sett.size(); i++) {
 	    		if (this.contains(sett.get(i))) {
-	    			resultset.add(sett.get(i));
+	    			resultset.add(set[indexOf(sett.get(i))]);
 	    		}
 	    	}
 	    }
@@ -101,6 +96,15 @@ class Set {
     		}
     	}
     	return null;
+    }
+
+    public int indexOf(int item) {
+    	for (int i = 0; i < size; i++) {
+    		if (set[i] == item) {
+    			return i;
+    		}
+    	}
+    	return -1;
     }
     public void resize() {
     	set = Arrays.copyOf(set, set.length * 2);
