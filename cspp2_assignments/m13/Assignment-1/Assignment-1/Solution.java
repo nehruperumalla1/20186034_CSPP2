@@ -18,6 +18,9 @@ class Set {
      * { Size Variable }.
      */
     private int size;
+    /**
+     * TEN Integer Variable.
+     */
     private static final int TEN = 10;
     /**
      * Constructs the object.
