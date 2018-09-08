@@ -30,7 +30,7 @@ class Set {
     	String str = "{";
     	if(size > 0) {
     		for (int i = 0; i < size - 1; i++) {
-    			str += set[i] + ",";
+    			str += set[i] + ", ";
     		}
     		str += set[size - 1];
     	}
