@@ -4,23 +4,43 @@ import java.util.Arrays;
 
 /**
  * Class for set.
- * @author : Nehru Perumalla.
+ * @author     : Nehru Perumalla.
  */
 class Set {
     //your code goes here...
     //Good luck :-)
+    //
+    /**
+     * Set Integer Array.
+     */
     private int[] set;
+    /**
+     * { Size Variable }.
+     */
     private int size;
-
+    /**
+     * Constructs the object.
+     */
     public Set() {
     	set = new int[10];
     	size = 0;
     }
-
+    /**
+     * { Contains Method }.
+     *
+     * @param      item  The item
+     *
+     * @return     { Returns Boolean }
+     */
     public boolean contains(int item) {
     	return indexOf(item) != -1;
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
     	String str = "{";
     	if(size > 0) {
@@ -32,7 +52,11 @@ class Set {
     	str += "}";
     	return str;
     }
-
+    /**
+     * { Add Method }.
+     *
+     * @param      item  The item
+     */
     public void add(int item) {
     	if (!(contains(item))) {
     		if (size >= set.length) {
@@ -42,11 +66,20 @@ class Set {
     		size += 1;
     	}
     }
-
+    /**
+     * { Size Method }.
+     *
+     * @return     { Returns Integer Value }
+     */
     public int size() {
     	return size;
     }
 
+    /**
+     * { Add Method }.
+     *
+     * @param      items  The items
+     */
     public void add(int[] items) {
     	if (items.length + size >= set.length) {
     		resize();
@@ -55,13 +88,26 @@ class Set {
     		add(items[i]);
     	}
     }
+    /**
+     * { Get Method }.
+     *
+     * @param      index  The index
+     *
+     * @return     { Returns Integer }
+     */
     public int get(int index) {
     	if (index < size && index >= 0) {
     		return set[index];
     	}
     	return -1;
     }
-
+    /**
+     * { Intersection Method }.
+     *
+     * @param      sett  The sett
+     *
+     * @return     { Returns Set }
+     */
     public Set intersection(Set sett) {
     	int count = 0;
     	Set resultset = new Set();
@@ -80,15 +126,26 @@ class Set {
     	}
     	return resultset;
     }
-
+    /**
+     * { retainAll Elements Method }.
+     *
+     * @param      items  The items
+     *
+     * @return     { Returns Set }
+     */
     public Set retainAll(int[] items) {
     	Set retainset = new Set();
     	retainset.add(items);
     	return intersection(retainset);
     }
-
+    /**
+     * { Cartesian product of Arrays }.
+     *
+     * @param      set1  The set 1
+     *
+     * @return     { Returns Integer 2D Array }
+     */
     public int[][] cartesianProduct(Set set1) {
-    	//System.out.println(set1.size() + " * " + size + " = " + set1.size()*size);
     	int k = 0;
     	int[][] cartesian = new int[set1.size()*size][2];
     	if (set1.size() > 0 && size > 0) {
@@ -104,7 +161,13 @@ class Set {
     	}
     	return null;
     }
-
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { Returns Integer }
+     */
     public int indexOf(int item) {
     	for (int i = 0; i < size; i++) {
     		if (set[i] == item) {
@@ -113,6 +176,9 @@ class Set {
     	}
     	return -1;
     }
+    /**
+     * { Resize Method }.
+     */
     public void resize() {
     	set = Arrays.copyOf(set, set.length * 2);
     }
