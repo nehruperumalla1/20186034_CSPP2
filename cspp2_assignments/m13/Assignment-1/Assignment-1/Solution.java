@@ -97,6 +97,7 @@ class Set {
     				cartesian[i][1] = 0;
     			}
     		}
+    		return cartesian;
     	}
     	return null;
     }
