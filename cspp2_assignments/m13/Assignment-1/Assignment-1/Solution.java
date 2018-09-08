@@ -63,27 +63,28 @@ class Set {
     }
 
     public Set intersection(Set sett) {
+    	int count = 0;
     	Set resultset = new Set();
     	if (this.size() != 0 && sett.size() != 0) {
-	    	for (int i = 0; i < sett.size(); i++) {
-	    		if (this.contains(sett.get(i))) {
-	    			resultset.add(set[indexOf(sett.get(i))]);
+	    	for (int i = 0; i < size; i++) {
+	    		count = 0;
+	    		for (int j = 0; j < sett.size(); j++) {
+	    			if (sett.get(j) == set[i]) {
+	    				count += 1;
+	    			}
+	    		}
+	    		if (count >= 1) {
+	    			resultset.add(get(i));
 	    		}
 	    	}
-	    }
+    	}
     	return resultset;
     }
 
     public Set retainAll(int[] items) {
     	Set retainset = new Set();
-    	if (items.length != 0 && size != 0) {
-    		for (int i = 0; i < items.length; i++) {
-	    		if (this.contains(items[i])) {
-	    			retainset.add(items[i]);
-	    		}
-	    	}
-    	}
-    	return retainset;
+    	retainset.add(items);
+    	return intersection(retainset);
     }
 
     public int[][] cartesianProduct(Set set1) {
