@@ -91,9 +91,10 @@ class Set {
     	//System.out.println(set1.size() + " * " + size + " = " + set1.size()*size);
     	int[][] cartesian = new int[set1.size()*size][2];
     	if (set1.size() > 0 && size > 0) {
-    		for (int i = 0; i < size; i++) {
-    			for (int j = 0; j < set1.size(); i++) {
-    				cartesian[i][j] = 1;
+    		for (int i = 0; i < set1.size()*size; i++) {
+    			for (int j = 0; j < 2; i++) {
+    				cartesian[i][0] = 1;
+    				cartesian[i][1] = 0;
     			}
     		}
     	}
