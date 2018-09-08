@@ -88,6 +88,7 @@ class Set {
     }
 
     public int[][] cartesianProduct(Set set1) {
+    	System.out.println(set1.size() + " * " + size + " = " + set1.size()*size);
     	int[][] cartesian = new int[set1.size()*size][2];
     	if (set1.size() > 0 && size > 0) {
     		for (int i = 0; i < size; i++) {
