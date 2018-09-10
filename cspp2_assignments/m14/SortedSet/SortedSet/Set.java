@@ -114,11 +114,11 @@ class Set {
     public Set headSet(int element) {
         Set headset = new Set();
         for (int i = 0; i < size; i++) {
+            System.out.println("In " + "i " + i);
             if(set[i] < element) {
                 headset.add(set[i]);
             }
         }
-        System.out.println(headset);
         return headset;
     }
 
