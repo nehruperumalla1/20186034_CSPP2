@@ -68,7 +68,9 @@ public final class Solution {
                 break;
                 case "subSet":
                 String[] values = tokens[1].split(",");
-                System.out.println(s.subSet(Integer.parseInt(values[0]), Integer.parseInt(values[1])));
+                if (s.subSet(Integer.parseInt(values[0]), Integer.parseInt(values[1])) != null) { 
+                    System.out.println(s.subSet(Integer.parseInt(values[0]), Integer.parseInt(values[1])));
+                }
                 break;
                 case "headSet":
                 int headvalue = Integer.parseInt(tokens[1]);

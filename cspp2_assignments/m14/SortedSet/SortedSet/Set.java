@@ -112,7 +112,7 @@ class Set {
 
     public Set subSet(int sele, int eele) {
         Set subset = new Set();
-        if (sele < eele) {
+        if (sele <= eele) {
             Set trail = new Set();
             trail = headSet(eele);
             for (int i = 0; i < trail.size(); i++) {
