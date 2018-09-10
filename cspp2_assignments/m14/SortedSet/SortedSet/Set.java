@@ -105,9 +105,10 @@ class Set {
                     subset.add(set[i]);
                 }
             }
+            return subset;
         }
-        System.out.println(subset);
-        return subset;
+        System.out.println("Invalid Arguments to Subset Exception");
+        return null;
     }
 
     public Set headSet(int element) {
