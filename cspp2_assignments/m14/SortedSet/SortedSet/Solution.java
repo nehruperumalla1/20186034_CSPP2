@@ -67,18 +67,15 @@ public final class Solution {
                 s.add(value);
                 break;
                 case "subSet":
-                s = new Set();
                 String[] values = tokens[1].split(",");
                 System.out.println(s.subSet(Integer.parseInt(values[0]), Integer.parseInt(values[1])));
                 break;
                 case "headSet":
-                s = new Set();
                 int headvalue = Integer.parseInt(tokens[1]);
                 System.out.println(s.headSet(headvalue));
                 break;
                 case "last":
-                s = new Set();
-                if (s.max() != -1) {
+                 if (s.max() != -1) {
                     System.out.println(s.max());
                 }
                 break;
