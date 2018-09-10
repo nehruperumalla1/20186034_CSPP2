@@ -66,31 +66,6 @@ public final class Solution {
                 int value = Integer.parseInt(tokens[1]);
                 s.add(value);
                 break;
-                // case "intersection":
-                // s = new Set();
-                // Set t = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.addAll(intArray);
-                // intArray = intArray(tokens[2]);
-                // t.addAll(intArray);
-                // System.out.println(s.intersection(t));
-                // break;
-                // case "retainAll":
-                // s = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.addAll(intArray);
-                // intArray = intArray(tokens[2]);
-                // System.out.println(s.retainAll(intArray));
-                // break;
-                // case "cartesianProduct":
-                // s = new Set();
-                // t = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.addAll(intArray);
-                // intArray = intArray(tokens[2]);
-                // t.addAll(intArray);
-                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
-                // break;
                 case "subSet":
                 s = new Set();
                 String[] values = tokens[1].split(",");
@@ -103,7 +78,9 @@ public final class Solution {
                 break;
                 case "last":
                 s = new Set();
-                System.out.println(s.max());
+                if (s.max() != -1) {
+                    System.out.println(s.max());
+                }
                 break;
                 default:
                 break;

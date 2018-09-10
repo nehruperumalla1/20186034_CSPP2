@@ -36,7 +36,12 @@ class Set {
      * @return     { Returns Boolean }
      */
     public boolean contains(final int item) {
-        return indexOf(item) != -1;
+        for (int i = 0; i < size; i++) {
+            if (set[i] == item) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -57,7 +62,7 @@ class Set {
     }
 
     public int max() {
-        int max =set[0];
+        int max = set[0];
         for (int i = 0; i < size; i++) {
             if(max < set[i]) {
                 max = set[i];
@@ -98,7 +103,6 @@ class Set {
                         break;
                     }
                 }
-            System.out.println(size + "In Add");
             } else {
                 set[size] = item;
                 size += 1;
@@ -111,7 +115,7 @@ class Set {
         if (sele < eele) {
             Set trail = new Set();
             trail.headSet(eele);
-            for (int i = 0; i < trail.size(); i++) {
+            for (int i = 0; i < this.size(); i++) {
                 if(set[i] >= sele) {
                     subset.add(set[i]);
                 }
@@ -139,7 +143,7 @@ class Set {
             return max();
         }
         System.out.println("Set Empty Exception");
-        return 0;
+        return -1;
     }
 
 
@@ -165,9 +169,6 @@ class Set {
      * @param      items  The items
      */
     public void addAll(final int[] items) {
-        if (items.length + size >= set.length) {
-            resize();
-        }
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
@@ -186,89 +187,9 @@ class Set {
         return -1;
     }
     /**
-     * { Intersection Method }.
-     *
-     * @param      sett  The sett
-     *
-     * @return     { Returns Set }
-     */
-    public Set intersection(final Set sett) {
-        int count = 0;
-        Set resultset = new Set();
-        if (this.size() != 0 && sett.size() != 0) {
-            for (int i = 0; i < size; i++) {
-                count = 0;
-                for (int j = 0; j < sett.size(); j++) {
-                    if (sett.get(j) == set[i]) {
-                        count += 1;
-                    }
-                }
-                if (count >= 1) {
-                    resultset.add(get(i));
-                }
-            }
-        }
-        return resultset;
-    }
-    /**
-     * { retainAll Elements Method }.
-     *
-     * @param      items  The items
-     *
-     * @return     { Returns Set }
-     */
-    public Set retainAll(final int[] items) {
-        Set retainset = new Set();
-        retainset.addAll(items);
-        return intersection(retainset);
-    }
-    /**
-     * { Cartesian product of Arrays }.
-     *
-     * @param      set1  The set 1
-     *
-     * @return     { Returns Integer 2D Array }
-     */
-    public int[][] cartesianProduct(final Set set1) {
-        int k = 0;
-        int[][] cartesian = new int[set1.size() * size][2];
-        if (set1.size() > 0 && size > 0) {
-            for (int i = 0; i < size; i++) {
-                for (int j = 0; j < set1.size(); j++) {
-                    cartesian[k][0] = get(i);
-                    cartesian[k][1] = set1.get(j);
-                    k += 1;
-                }
-            }
-            return cartesian;
-        }
-        return null;
-    }
-    /**
-     * Searches for the first match.
-     *
-     * @param      item  The item
-     *
-     * @return     { Returns Integer }
-     */
-    public int indexOf(final int item) {
-        for (int i = 0; i < size; i++) {
-            if (set[i] == item) {
-                return i;
-            }
-        }
-        return -1;
-    }
-    /**
      * { Resize Method }.
      */
     public void resize() {
         set = Arrays.copyOf(set, set.length * 2);
     }
-
-
-
-
-
-
 }
