@@ -114,7 +114,7 @@ class Set {
         Set subset = new Set();
         if (sele < eele) {
             Set trail = new Set();
-            trail.headSet(eele);
+            trail = headSet(eele);
             for (int i = 0; i < this.size(); i++) {
                 if(set[i] >= sele) {
                     subset.add(set[i]);
