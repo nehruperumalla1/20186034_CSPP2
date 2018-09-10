@@ -77,7 +77,7 @@ public final class Solution {
                 System.out.println(s.headSet(headvalue));
                 break;
                 case "last":
-                    System.out.println(s.max());
+                    System.out.println(s.last());
                 break;
                 default:
                 break;
