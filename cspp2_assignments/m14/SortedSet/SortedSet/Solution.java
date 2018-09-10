@@ -1,6 +1,13 @@
+/**
+ * Set Solution.
+ * @author Nehru Perumalla.
+ */
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Class Solution.
+ */
 public final class Solution {
     /**
      * Constructs the object.
@@ -68,8 +75,10 @@ public final class Solution {
                 break;
                 case "subSet":
                 String[] values = tokens[1].split(",");
-                if (s.subSet(Integer.parseInt(values[0]), Integer.parseInt(values[1])) != null) { 
-                    System.out.println(s.subSet(Integer.parseInt(values[0]), Integer.parseInt(values[1])));
+                if (s.subSet(Integer.parseInt(values[0]), Integer.parseInt(
+                    values[1])) != null) {
+                    System.out.println(s.subSet(Integer.parseInt(values[0]),
+                        Integer.parseInt(values[1])));
                 }
                 break;
                 case "headSet":

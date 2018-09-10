@@ -60,7 +60,11 @@ class Set {
         str += "}";
         return str;
     }
-
+    /**
+     * { Maximum Method }.
+     *
+     * @return     { Returns Integer Value }
+     */
     public int max() {
         int max = set[0];
         for (int i = 0; i < size; i++) {
@@ -70,7 +74,11 @@ class Set {
         }
         return max;
     }
-
+    /**
+     * { Min Method }.
+     *
+     * @return     { Returns Integer Value }
+     */
     public int min() {
         int max =set[0];
         for (int i = 0; i < size; i++) {
@@ -109,7 +117,14 @@ class Set {
             }
         }
     }
-
+    /**
+     * { SubSet Method }.
+     *
+     * @param      sele  The sele
+     * @param      eele  The eele
+     *
+     * @return     { Returns Set }
+     */
     public Set subSet(int sele, int eele) {
         Set subset = new Set();
         if (sele <= eele) {
@@ -125,7 +140,13 @@ class Set {
         System.out.println("Invalid Arguments to Subset Exception");
         return null;
     }
-
+    /**
+     * { Head Set of Set }.
+     *
+     * @param      element  The element
+     *
+     * @return     { Returns Set }
+     */
     public Set headSet(int element) {
         Set headset = new Set();
         for (int i = 0; i < this.size(); i++) {
@@ -135,7 +156,11 @@ class Set {
         }
         return headset;
     }
-
+    /**
+     * { Last Element in Set }.
+     *
+     * @return     { Returns Integer }
+     */
     public int last() {
         if (size > 0) {
             return max();
@@ -143,8 +168,12 @@ class Set {
         System.out.println("Set Empty Exception");
         return -1;
     }
-
-
+    /**
+     * { Add at Index Method }.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
     public void add(final int index, final int item) {
         for (int i = size - 1; i >= index; i--) {
             set[i + 1] = set[i];
