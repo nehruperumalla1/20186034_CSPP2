@@ -115,7 +115,8 @@ class Set {
         if (sele < eele) {
             Set trail = new Set();
             trail = headSet(eele);
-            for (int i = 0; i < this.size(); i++) {
+            System.out.println(trail);
+            for (int i = 0; i < trail.size(); i++) {
                 if(set[i] >= sele) {
                     subset.add(set[i]);
                 }
@@ -127,7 +128,6 @@ class Set {
     }
 
     public Set headSet(int element) {
-        System.out.println(size + "Size");
         Set headset = new Set();
         for (int i = 0; i < this.size(); i++) {
             System.out.println("In " + "i " + i);
