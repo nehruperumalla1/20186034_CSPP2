@@ -65,16 +65,6 @@ class Set {
         }
         return max;
     }
-
-    // public int min() {
-    //     int min = set[0];
-    //     for (int i = 0; i < size; i++) {
-    //         if(min > set[i]) {
-    //             min = set[i];
-    //         }
-    //     }
-    //     return min;
-    // }
     /**
      * { Add Method }.
      *
@@ -105,17 +95,16 @@ class Set {
         }
     }
 
-    public Set subSet(int start, int end) {
+    public Set subSet(int sele, int eele) {
         Set subset = new Set();
-        if (start > end) {
-            System.out.println("Index out of Bounds Exception");
-            return subset;
-        } else if(start <= 0 || end <= 0 || start == end) {
-            System.out.println("Index out of Bounds Exception");
-            return subset;
-        }
-        for (int i = start; i < end; i++) {
-            subset.add(set[i]);
+        if (sele < eele) {
+            Set trail = new Set();
+            trail.headSet(eele);
+            for (int i = 0; i < trail.size(); i++) {
+                if(set[i] >= sele) {
+                    subset.add(set[i]);
+                }
+            }
         }
         return subset;
     }
