@@ -118,6 +118,7 @@ class Set {
                 headset.add(set[i]);
             }
         }
+        System.out.println(headset);
         return headset;
     }
 
