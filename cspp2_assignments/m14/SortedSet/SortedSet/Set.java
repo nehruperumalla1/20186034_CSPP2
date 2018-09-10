@@ -98,6 +98,7 @@ class Set {
                         break;
                     }
                 }
+            System.out.println(size + "In Add");
             } else {
                 set[size] = item;
                 size += 1;
