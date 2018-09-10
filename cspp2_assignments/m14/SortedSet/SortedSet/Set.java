@@ -129,7 +129,7 @@ class Set {
     public Set headSet(int element) {
         System.out.println(size + "Size");
         Set headset = new Set();
-        for (int i = 0; i < size(); i++) {
+        for (int i = 0; i < this.size(); i++) {
             System.out.println("In " + "i " + i);
             if(set[i] < element) {
                 headset.add(set[i]);
