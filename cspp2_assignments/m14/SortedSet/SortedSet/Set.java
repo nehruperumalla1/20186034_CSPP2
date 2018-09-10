@@ -106,6 +106,7 @@ class Set {
                 }
             }
         }
+        System.out.println(subset);
         return subset;
     }
 
