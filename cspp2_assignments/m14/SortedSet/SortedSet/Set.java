@@ -131,7 +131,6 @@ class Set {
         Set headset = new Set();
         for (int i = 0; i < this.size(); i++) {
             if(set[i] < element) {
-                System.out.println(set[i]);
                 headset.add(set[i]);
             }
         }
