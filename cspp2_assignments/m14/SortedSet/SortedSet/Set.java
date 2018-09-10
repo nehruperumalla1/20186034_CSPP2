@@ -65,6 +65,16 @@ class Set {
         }
         return max;
     }
+
+    public int min() {
+        int max =set[0];
+        for (int i = 0; i < size; i++) {
+            if(max > set[i]) {
+                max = set[i];
+            }
+        }
+        return max;
+    }
     /**
      * { Add Method }.
      *
@@ -83,7 +93,7 @@ class Set {
                     } else if (item > max()) {
                         add(size, item);
                         break;
-                    } else {
+                    } else if(item < min()){
                         add(0, item);
                         break;
                     }

@@ -55,41 +55,42 @@ public final class Solution {
                 System.out.println(s);
                 break;
                 case "addAll":
-                int[] intArray = intArray(tokens[1]);
-                if (intArray.length == 1) {
-                    s.add(intArray[0]);
-                } else {
-                    s.addAll(intArray);
+                String[] stringArray = tokens[1].split(",");
+                int[] intarray = new int[stringArray.length];
+                for (int i = 0; i < stringArray.length; i++) {
+                    intarray[i] = Integer.parseInt(stringArray[i]);
                 }
+                s.addAll(intarray);
                 break;
                 case "add":
-                int value = Integer.parseInt(tokens[0]);
+                int value = Integer.parseInt(tokens[1]);
                 s.add(value);
-                case "intersection":
-                s = new Set();
-                Set t = new Set();
-                intArray = intArray(tokens[1]);
-                s.addAll(intArray);
-                intArray = intArray(tokens[2]);
-                t.addAll(intArray);
-                System.out.println(s.intersection(t));
                 break;
-                case "retainAll":
-                s = new Set();
-                intArray = intArray(tokens[1]);
-                s.addAll(intArray);
-                intArray = intArray(tokens[2]);
-                System.out.println(s.retainAll(intArray));
-                break;
-                case "cartesianProduct":
-                s = new Set();
-                t = new Set();
-                intArray = intArray(tokens[1]);
-                s.addAll(intArray);
-                intArray = intArray(tokens[2]);
-                t.addAll(intArray);
-                System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
-                break;
+                // case "intersection":
+                // s = new Set();
+                // Set t = new Set();
+                // intArray = intArray(tokens[1]);
+                // s.addAll(intArray);
+                // intArray = intArray(tokens[2]);
+                // t.addAll(intArray);
+                // System.out.println(s.intersection(t));
+                // break;
+                // case "retainAll":
+                // s = new Set();
+                // intArray = intArray(tokens[1]);
+                // s.addAll(intArray);
+                // intArray = intArray(tokens[2]);
+                // System.out.println(s.retainAll(intArray));
+                // break;
+                // case "cartesianProduct":
+                // s = new Set();
+                // t = new Set();
+                // intArray = intArray(tokens[1]);
+                // s.addAll(intArray);
+                // intArray = intArray(tokens[2]);
+                // t.addAll(intArray);
+                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                // break;
                 case "subSet":
                 s = new Set();
                 String[] values = tokens[1].split(",");
