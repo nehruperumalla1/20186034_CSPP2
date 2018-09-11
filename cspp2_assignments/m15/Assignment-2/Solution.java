@@ -112,7 +112,7 @@ public final class Solution extends Set {
                 }
                 break;
                 case "headSet":
-                int headvalue = Integer.parseInt(tokens[1]);
+                int headvalue = Integer.parseInt(tokens[0]);
                 try {
                     System.out.println(s.headSet(headvalue));
                 } catch (Exception e) {
