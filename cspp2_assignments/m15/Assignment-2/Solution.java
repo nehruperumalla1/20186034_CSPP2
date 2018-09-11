@@ -104,7 +104,11 @@ public final class Solution extends Set{
                 }
                 break;
                 case "last":
+                try {
                     System.out.println(s.last());
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
                 case "intersection":
                 s = new Set();

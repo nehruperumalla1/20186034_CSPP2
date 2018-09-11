@@ -127,7 +127,7 @@ class Set {
      */
     public Set subSet(int sele, int eele) throws InvalidSubsetSelectionException {
         Set subset = new Set();
-        if (sele >= eele) {
+        if (sele > eele) {
             throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
         }
         for (int i = 0; i < size; i++) {
@@ -144,7 +144,7 @@ class Set {
      *
      * @return     { Returns Set }
      */
-    public Set headSet(int element) throws SetEmptyException{
+    public Set headSet(int element) throws SetEmptyException {
         Set headset = new Set();
         for (int i = 0; i < this.size(); i++) {
             if(set[i] < element) {
@@ -161,12 +161,11 @@ class Set {
      *
      * @return     { Returns Integer }
      */
-    public int last() {
-        if (size > 0) {
-            return max();
+    public int last() throws SetEmptyException {
+        if (size == 0) {
+            throw new SetEmptyException("Set Empty Exception");
         }
-        System.out.println("Set Empty Exception");
-        return -1;
+        return max();
     }
     /**
      * { Add at Index Method }.
