@@ -131,7 +131,7 @@ class Set {
             throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
         }
         for (int i = 0; i < size; i++) {
-            if(set[i] >= sele && set[i] <= eele) {
+            if(set[i] >= sele && set[i] < eele) {
                 subset.add(set[i]);
             }
         }
