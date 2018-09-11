@@ -130,14 +130,8 @@ class Set {
         if (sele >= eele) {
             throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
         }
-        Set trail = new Set();
-        try {
-            trail = headSet(eele);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        for (int i = 0; i < trail.size(); i++) {
-            if(set[i] >= sele) {
+        for (int i = 0; i < size; i++) {
+            if(set[i] >= sele && set[i] <= eele) {
                 subset.add(set[i]);
             }
         }
