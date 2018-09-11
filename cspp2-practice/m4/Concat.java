@@ -17,7 +17,6 @@ public final class Concat {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        System.out.println("Hello " + s + "!");
+        System.out.println("Hello ".concat(sc.next()).concat("!"));
     }
 }
