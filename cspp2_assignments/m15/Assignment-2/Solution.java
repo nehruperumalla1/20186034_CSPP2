@@ -8,7 +8,16 @@ import java.util.Arrays;
 /**
  * Class Solution.
  */
-
+class InvalidSubsetSelectionException extends Exception {
+    InvalidSubsetSelectionException(String s) {
+        super(s);
+    }
+}
+class SetEmptyException extends Exception {
+    SetEmptyException(String s) {
+        super(s);
+    }
+}
 public final class Solution extends Set{
     /**
      * Constructs the object.

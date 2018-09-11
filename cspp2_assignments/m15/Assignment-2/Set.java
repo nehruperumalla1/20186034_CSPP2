@@ -117,12 +117,6 @@ class Set {
             }
         }
     }
-
-    public class InvalidSubsetSelectionException extends Exception {
-        InvalidSubsetSelectionException(String s) {
-            super(s);
-        }
-    }
     /**
      * { SubSet Method }.
      *
@@ -148,11 +142,6 @@ class Set {
             }
         }
         return subset;
-    }
-    public class SetEmptyException extends Exception {
-        SetEmptyException(String s) {
-            super(s);
-        }
     }
     /**
      * { Head Set of Set }.
