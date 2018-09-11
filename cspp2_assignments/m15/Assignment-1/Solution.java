@@ -83,9 +83,11 @@ public class Solution {
      *
      * [1,2,3,4,5] remove(2) [1,2,4,5]
      *
-     * @param      index  The index
+     * @param      index      The index
+     *
+     * @throws     Exception  { exception_description }
      */
-    public void remove(final int index) throws Exception{
+    public void remove(final int index) throws Exception {
         if (index >= 0 && index < size) {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
@@ -190,7 +192,7 @@ public class Solution {
             while (index != -1) {
                 try {
                     remove(i);
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 index = indexOf(newArray[i]);
@@ -198,16 +200,16 @@ public class Solution {
         }
     }
     /**
-     Return null and print "Index Out of Bounds Exception" if start and end
-     parameters are invalid eg: [3, 2] start is greater than the end [-3, 4]
-     start and end are negative If List has one Element [1, 3] is Out of Bounds,
-     as size is One Given an empty list [0, 0] is Out of Bounds, as size is zero
-     Caution: If size > 0 and start and end are equal then sublist is empty.
-     @param      start  The start
-     @param      end    The end
-     @return     { description_of_the_return_value }
-    */
-    public Solution subList(final int start, final int end) throws Exception{
+     * { Sublist Method }.
+     *
+     * @param      start      The start
+     * @param      end        The end
+     *
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public Solution subList(final int start, final int end) throws Exception {
         if (start >= end || start > size || end > size) {
             throw new Exception("Index Out of Bounds Exception");
         } else if (start < 0 || end < 0) {
@@ -236,10 +238,17 @@ public class Solution {
     public void clear() {
         size = 0;
     }
-    public int count(int item) {
+    /**
+     * { Counts specified Item in List }.
+     *
+     * @param      item  The item
+     *
+     * @return     { Returns Integer Value }
+     */
+    public int count(final int item) {
         int c = 0;
         for (int i = 0; i < size; i++) {
-            if(list[i] == item) {
+            if (list[i] == item) {
                 c++;
             }
         }
@@ -277,7 +286,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         l.remove(Integer.parseInt(tokens[1]));
                     }
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -325,12 +334,13 @@ public class Solution {
                     }
                     try {
                         String[] arrstring3 = tokens[1].split(",");
-                        Solution object = l.subList(Integer.parseInt(arrstring3[0]),
+                        Solution object = l.subList(Integer.parseInt(
+                            arrstring3[0]),
                                 Integer.parseInt(arrstring3[1]));
                         if (object != null) {
                             System.out.println(object);
                         }
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                 break;
