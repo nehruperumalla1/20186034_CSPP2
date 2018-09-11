@@ -191,7 +191,7 @@ public class Solution {
                 try {
                     remove(i);
                 } catch(Exception e) {
-                    System.out.println(e);
+                    System.out.println(e.getMessage());
                 }
                 index = indexOf(newArray[i]);
             }
@@ -269,7 +269,7 @@ public class Solution {
                         l.remove(Integer.parseInt(tokens[1]));
                     }
                 } catch(Exception e) {
-                    System.out.println(e);
+                    System.out.println(e.getMessage());
                 }
                 break;
                 case "indexOf":
@@ -322,7 +322,7 @@ public class Solution {
                             System.out.println(object);
                         }
                     } catch(Exception e) {
-                        System.out.println(e);
+                        System.out.println(e.getMessage());
                     }
                 break;
                 case "equals":
