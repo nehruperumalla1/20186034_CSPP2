@@ -6,19 +6,25 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 /**
- * Class Solution.
+ * Exception for signaling invalid subset selection errors.
  */
 class InvalidSubsetSelectionException extends Exception {
-    InvalidSubsetSelectionException(String s) {
+    InvalidSubsetSelectionException(final String s) {
         super(s);
     }
 }
+/**
+ * Exception for signaling set empty errors.
+ */
 class SetEmptyException extends Exception {
-    SetEmptyException(String s) {
+    SetEmptyException(final String s) {
         super(s);
     }
 }
-public final class Solution extends Set{
+/**
+ * Class Solution.
+ */
+public final class Solution extends Set {
     /**
      * Constructs the object.
      */
@@ -99,7 +105,7 @@ public final class Solution extends Set{
                 int headvalue = Integer.parseInt(tokens[1]);
                 try {
                     System.out.println(s.headSet(headvalue));
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
