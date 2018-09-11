@@ -236,6 +236,15 @@ public class Solution {
     public void clear() {
         size = 0;
     }
+    public int count(int item) {
+        int c = 0;
+        for (int i = 0; i < size; i++) {
+            if(list[i] == item) {
+                c++;
+            }
+        }
+        return c;
+    }
 
     /**
      * main method to drive program.
@@ -338,6 +347,8 @@ public class Solution {
                 case "clear":
                     l.clear();
                 break;
+                case "count":
+                    System.out.println(l.count(Integer.parseInt(tokens[1])));
                 default:
                 break;
             }
