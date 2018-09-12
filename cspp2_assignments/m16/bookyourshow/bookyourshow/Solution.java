@@ -230,7 +230,7 @@ public final class Solution {
                 case "get":
                     Show show = bys.getAShow(check[1], tokens[1]);
                     if (show != null) {
-                       System.out.println(show);
+                       System.out.println(show.toString());
                     } else {
                         System.out.println("No show");
                     }
