@@ -105,17 +105,18 @@ class BookYourShow {
      * @param      time    The time
      * @param      patron  The patron
      */
-    public void bookAShow(final String m_name, final String time, final Patron patron) {
+    public void bookAShow(final String mname, final String time,
+        final Patron patron) {
         addAPatron(patron);
-        Show show = getAShow(m_name, time);
-        if (getAShow(m_name, time) != null) {
+        Show show = getAShow(mname, time);
+        if (getAShow(mname, time) != null) {
             //System.out.println("Inside Movie");
             //if (aseat(patron.getSeats(), show)) {
                 //System.out.println("Inside Seats");
                 for (int i = 0; i < patron.getSeats().length; i++) {
                     for (int j = 0; j < show.seats().length; j++) {
-                        if (show.seats()[j].equals(patron.getSeats()[i]) &&
-                            !show.seats()[j].equals("N/A")) {
+                        if (show.seats()[j].equals(patron.getSeats()[i])
+                            && !show.seats()[j].equals("N/A")) {
                             show.seats()[j] = "N/A";
                         }
                     }
@@ -156,7 +157,8 @@ class BookYourShow {
      *
      * @return     { Returns String Value }
      */
-    public String printTicket(final String name, final String time, final String num) {
+    public String printTicket(final String name, final String time,
+        final String num) {
         String str = "Invalid";
         if (getAShow(name, time) != null) {
             str = "No show";
@@ -206,7 +208,7 @@ class Show {
      *
      * @param      movie   The movie
      * @param      timing  The timing
-     * @param      seats   The seats
+     * @param      seats1   The seats
      */
     Show(final String movie, final String timing, final String[] seats1) {
         this.movname = movie;
