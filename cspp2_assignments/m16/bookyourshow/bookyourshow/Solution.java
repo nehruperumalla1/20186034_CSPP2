@@ -110,44 +110,18 @@ class BookYourShow {
         addAPatron(patron);
         Show show = getAShow(mname, time);
         if (getAShow(mname, time) != null) {
-            //System.out.println("Inside Movie");
-            //if (aseat(patron.getSeats(), show)) {
-                //System.out.println("Inside Seats");
-                for (int i = 0; i < patron.getSeats().length; i++) {
-                    for (int j = 0; j < show.seats().length; j++) {
-                        if (show.seats()[j].equals(patron.getSeats()[i])
-                            && !show.seats()[j].equals("N/A")) {
-                            show.seats()[j] = "N/A";
-                        }
+            for (int i = 0; i < patron.getSeats().length; i++) {
+                for (int j = 0; j < show.seats().length; j++) {
+                    if (show.seats()[j].equals(patron.getSeats()[i])
+                        && !show.seats()[j].equals("N/A")) {
+                        show.seats()[j] = "N/A";
                     }
                 }
-            //}
+            }
         } else {
             System.out.println("No show");
         }
     }
-    // /**
-    //  * { Counting No.of Seats }.
-    //  *
-    //  * @param      seat  The seat
-    //  * @param      show  The show
-    //  *
-    //  * @return     { Returns Boolean value }
-    //  */
-    // public boolean aseat(String[] seat, Show show) {
-    //  int c = 0;
-    //  for (int i = 0; i < seat.length; i++) {
-    //      for (int j = 0; j < show.seats().length; j++) {
-    //          if(show.seats()[j].equals(seat[i])) {
-    //              c += 1;
-    //          }
-    //      }
-    //  }
-    //  if (c == seat.length) {
-    //      return true;
-    //  }
-    //  return false;
-    // }
     /**
      * { PrintTicket Method }.
      *
