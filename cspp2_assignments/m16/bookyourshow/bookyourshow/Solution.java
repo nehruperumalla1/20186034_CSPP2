@@ -57,12 +57,12 @@ class BookYourShow {
 		addAPatron(patron);
 		Show show = getAShow(m_name, time);
 		if (getAShow(m_name, time) != null) {
-			if (aseat(patron.getSeats(), show)) {
-				for (int i = 0; i < patron.getSeats().length; i++) {
-					for (int j = 0; j < show.seats().length; j++) {
-						if(show.seats()[j].equals(patron.getSeats()[i])) {
-							show.seats()[j] = "N/A";
-						}
+			System.out.println("Inside Movie");
+			for (int i = 0; i < patron.getSeats().length; i++) {
+				for (int j = 0; j < show.seats().length; j++) {
+					if(show.seats()[j].equals(patron.getSeats()[i])
+						&& !show.seats()[j].equals("N/A")) {
+						show.seats()[j] = "N/A";
 					}
 				}
 			}
