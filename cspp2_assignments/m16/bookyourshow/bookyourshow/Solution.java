@@ -4,22 +4,45 @@ import java.util.Scanner;
  * Class for book your show.
  */
 class BookYourShow {
-
+	/**
+	 * Show Size.
+	 */
 	private int sh_size;
+	/**
+	 * Patrons Size.
+	 */
 	private int p_size;
+	/**
+	 * Patrons Array.
+	 */
 	Patron[] patrons;
+	/**
+	 * { Show Object Array }.
+	 */
 	Show[] shows;
-	public BookYourShow() {
+	/**
+	 * Constructs the object.
+	 */
+	BookYourShow() {
 		this.patrons = new Patron[10];
 		this.shows = new Show[10];
 		this.sh_size = 0;
 		this.p_size = 0;
 	}
+
+	/**
+	 * { Resize Method }.
+	 */
 	public void resize() {
 		shows = Arrays.copyOf(shows, 2 * shows.length);
 		patrons = Arrays.copyOf(patrons, 2 * patrons.length);
 	}
 
+	/**
+	 * Adds a show.
+	 *
+	 * @param      show  The show
+	 */
 	public void addAShow(Show show) {
 		if(sh_size >= shows.length) {
 			resize();
@@ -28,6 +51,11 @@ class BookYourShow {
 		sh_size += 1;
 	}
 
+	/**
+	 * Adds a patron.
+	 *
+	 * @param      patron  The patron
+	 */
 	public void addAPatron(Patron patron) {
 		if (p_size >= patrons.length) {
 			resize();
@@ -35,13 +63,32 @@ class BookYourShow {
 		patrons[p_size] = patron;
 		p_size += 1;
 	}
+
+	/**
+	 * { Show Size Method }.
+	 *
+	 * @return     { Returns Integer Value }
+	 */ 
 	public int sh_size() {
 		return sh_size;
 	}
 
+	/**
+	 * { Patrons Size }.
+	 *
+	 * @return     { Returns Integer Value }
+	 */
 	public int p_size() {
 		return p_size;
 	}
+	/**
+	 * Gets a show.
+	 *
+	 * @param      name  The name
+	 * @param      time  The time
+	 *
+	 * @return     A show.
+	 */
 	public Show getAShow(String name, String time) {
 		for (int i = 0; i < sh_size; i++) {
 			if(name.equals(shows[i].getName()) && time.equals(shows[i].gettime())) {
@@ -50,41 +97,64 @@ class BookYourShow {
 		}
 		return null;
 	}
-
-
-
+	/**
+	 * { Book A Show Method }.
+	 *
+	 * @param      m_name  The m name
+	 * @param      time    The time
+	 * @param      patron  The patron
+	 */
 	public void bookAShow(String m_name, String time, Patron patron) {
 		addAPatron(patron);
 		Show show = getAShow(m_name, time);
 		if (getAShow(m_name, time) != null) {
-			for (int i = 0; i < patron.getSeats().length; i++) {
-				for (int j = 0; j < show.seats().length; j++) {
-					if(show.seats()[j].equals(patron.getSeats()[i])
-						&& !show.seats()[j].equals("N/A")) {
-						show.seats()[j] = "N/A";
+			//System.out.println("Inside Movie");
+			//if (aseat(patron.getSeats(), show)) {
+				//System.out.println("Inside Seats");
+				for (int i = 0; i < patron.getSeats().length; i++) {
+					for (int j = 0; j < show.seats().length; j++) {
+						if(show.seats()[j].equals(patron.getSeats()[i])
+							&& !show.seats()[j].equals("N/A")) {
+							show.seats()[j] = "N/A";
+						}
 					}
 				}
-			}
+			//}
 		} else {
 			System.out.println("No show");
 		}
 	}
-
-	public boolean aseat(String[] seat, Show show) {
-		int c = 0;
-		for (int i = 0; i < seat.length; i++) {
-			for (int j = 0; j < show.seats().length; j++) {
-				if(show.seats()[j].equals(seat[i])) {
-					c += 1;
-				}
-			}
-		}
-		if (c == seat.length) {
-			return true;
-		}
-		return false;
-	}
-
+	// /**
+	//  * { Counting No.of Seats }.
+	//  *
+	//  * @param      seat  The seat
+	//  * @param      show  The show
+	//  *
+	//  * @return     { Returns Boolean value }
+	//  */
+	// public boolean aseat(String[] seat, Show show) {
+	// 	int c = 0;
+	// 	for (int i = 0; i < seat.length; i++) {
+	// 		for (int j = 0; j < show.seats().length; j++) {
+	// 			if(show.seats()[j].equals(seat[i])) {
+	// 				c += 1;
+	// 			}
+	// 		}
+	// 	}
+	// 	if (c == seat.length) {
+	// 		return true;
+	// 	}
+	// 	return false;
+	// }
+	/**
+	 * { PrintTicket Method }.
+	 *
+	 * @param      name  The name
+	 * @param      time  The time
+	 * @param      num   The number
+	 *
+	 * @return     { Returns String Value }
+	 */
 	public String printTicket(String name, String time, String num) {
 		String str = "Invalid";
 		if(getAShow(name, time) != null) {
@@ -99,7 +169,9 @@ class BookYourShow {
 		}
 		return str;
 	}
-
+	/**
+	 * Shows all.
+	 */
 	public void showAll() {
 		for (int i = 0; i < sh_size; i++) {
 			System.out.println(shows[i]);
@@ -125,7 +197,7 @@ class Show {
 	/**
 	 * Constructs the object.
 	 */
-	public Show() {
+	Show() {
 		// Empty Constructor.
 	}
 	/**
@@ -188,7 +260,7 @@ class Patron {
 	 * @param      phn        The phn
 	 * @param      seats      The seats
 	 */
-	public Patron(final String cust_name, final String phn, final String[] seats) {
+	Patron(final String cust_name, final String phn, final String[] seats) {
 		this.name = cust_name;
 		this.num = phn;
 		this.b_seats = seats;
