@@ -101,7 +101,7 @@ class BookYourShow {
     /**
      * { Book A Show Method }.
      *
-     * @param      m_name  The m name
+     * @param      mname  The m name
      * @param      time    The time
      * @param      patron  The patron
      */
