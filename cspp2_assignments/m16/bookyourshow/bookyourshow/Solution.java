@@ -185,11 +185,11 @@ class Show {
 	/**
 	 * { Movie Name }.
 	 */
-	private String mov_name;
+	private String movname;
 	/**
 	 * { Date_Time of Show }.
 	 */
-	private String date_time;
+	private String datetime;
 	/**
 	 * { Seats }.
 	 */
@@ -208,32 +208,54 @@ class Show {
 	 * @param      seats   The seats
 	 */
 	public Show(final String movie, final String timing, final String[] seats) {
-		this.mov_name = movie;
-		this.date_time = timing;
+		this.movname = movie;
+		this.datetime = timing;
 		this.seats = seats;
 	}
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {
-		return this.mov_name;
+		return this.movname;
 	}
-
+	/**
+	 * Getter for Time / Date.
+	 *
+	 * @return     { Returns String }
+	 */
 	public String gettime() {
-		return this.date_time;
+		return this.datetime;
 	}
 
+	/**
+	 * Seats Array.
+	 *
+	 * @return     { Returns String Array }
+	 */
 	public String[] seats() {
 		return this.seats;
 	}
-
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String s = "";
-		s += mov_name + "," + date_time + ",";
+		s += movname + "," + datetime + ",";
 		s += Arrays.toString(seats).replace(", ", ",");
 		return s;
 	}
-
+	/**
+	 * { ToString Method }.
+	 *
+	 * @return     {Returns a String}
+	 */
 	public String toStringEx() {
 		String s = "";
-		s += mov_name + "," + date_time;
+		s += movname + "," + datetime;
 		return s;
 	}
 }
@@ -252,32 +274,50 @@ class Patron {
 	/**
 	 * { Seats Booked }.
 	 */
-	private String[] b_seats;
+	private String[] bseats;
 	/**
 	 * Constructs the object.
 	 *
-	 * @param      cust_name  The customer name
+	 * @param      custname  The customer name
 	 * @param      phn        The phn
 	 * @param      seats      The seats
 	 */
-	Patron(final String cust_name, final String phn, final String[] seats) {
-		this.name = cust_name;
+	Patron(final String custname, final String phn, final String[] seats) {
+		this.name = custname;
 		this.num = phn;
-		this.b_seats = seats;
+		this.bseats = seats;
 	}
 
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {
 		return this.name;
 	}
 
+	/**
+	 * Gets the number.
+	 *
+	 * @return     The number.
+	 */
 	public String getNum() {
 		return this.num;
 	}
 
+	/**
+	 * Gets the seats.
+	 *
+	 * @return     The seats.
+	 */
 	public String[] getSeats() {
-		return this.b_seats;
+		return this.bseats;
 	}
 }
+/**
+ * Solution Class.
+ */
 public final class Solution {
     /**
      * Constructs the object.
@@ -328,7 +368,8 @@ public final class Solution {
                 break;
 
                 case "print":
-                System.out.println(bys.printTicket(check[1], tokens[1], tokens[2]));
+                System.out.println(bys.printTicket(check[1], tokens[1],
+                	tokens[2]));
                 break;
 
                 case "showAll":
