@@ -154,7 +154,7 @@ class Show {
 
 	public String toString() {
 		String s = "";
-		s += mov_name + "," + date_time;
+		s += mov_name + "," + date_time + ",";
 		s += Arrays.toString(seats).replace(", ", ",");
 		return s;
 	}
