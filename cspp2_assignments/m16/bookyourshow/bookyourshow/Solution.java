@@ -89,6 +89,7 @@ class BookYourShow {
 			str = "Invalid";
 			for (int i = 0; i < p_size; i++) {
 				if(patrons[i].getNum().equals(num)) {
+					System.out.println("Inside");
 					str = num + " " + name + " " + time;
 				}
 			}
