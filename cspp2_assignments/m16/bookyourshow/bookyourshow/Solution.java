@@ -71,6 +71,8 @@ class BookYourShow {
 					}
 				}
 			}
+		} else {
+			System.out.println("No Show");
 		}
 	}
 
@@ -90,12 +92,14 @@ class BookYourShow {
 	}
 
 	public String printTicket(String name, String time, String num) {
-		String str = "No Show";
+		String str = "Invalid";
 		if(getAShow(name, time) != null) {
+			str = "No Show";
 			for (int i = 0; i < p_size; i++) {
 				str = "Invalid";
 				if(patrons[i].getNum().equals(num)) {
 					str = num + " " + name + " " + time;
+					return str;
 				}
 			}
 		}
@@ -245,7 +249,7 @@ public final class Solution {
                 case "get":
                     Show show = bys.getAShow(check[1], tokens[1]);
                     if (show != null) {
-                       System.out.println(show.toString());
+                       System.out.println(show);
                     } else {
                         System.out.println("No show");
                     }
