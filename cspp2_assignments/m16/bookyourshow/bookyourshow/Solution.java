@@ -51,16 +51,17 @@ class BookYourShow {
 		return null;
 	}
 
+
+
 	public void bookAShow(String m_name, String time, Patron patron) {
 		addAPatron(patron);
-		Show book = new Show();
-		book = getAShow(m_name, time);
+		Show show = getAShow(m_name, time);
 		if (getAShow(m_name, time) != null) {
-			if (aseat(patron.getSeats(), book)) {
+			if (aseat(patron.getSeats(), show)) {
 				for (int i = 0; i < patron.getSeats().length; i++) {
-					for (int j = 0; j < book.seats().length; j++) {
-						if(book.seats()[j].equals(patron.getSeats()[i])) {
-							book.seats()[j] = "N/A";
+					for (int j = 0; j < show.seats().length; j++) {
+						if(show.seats()[j].equals(patron.getSeats()[i])) {
+							show.seats()[j] = "N/A";
 						}
 					}
 				}
