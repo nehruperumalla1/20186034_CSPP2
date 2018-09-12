@@ -51,6 +51,12 @@ class BookYourShow {
 		return null;
 	}
 
+	public String toString(Show show) {
+		String str = "";
+		str = show.getName() + " " + show.gettime();
+		return str;
+	}
+
 	public void bookAShow(String m_name, String time, Patron patron) {
 		addAPatron(patron);
 		Show book = new Show();
@@ -86,8 +92,8 @@ class BookYourShow {
 	public String printTicket(String name, String time, String num) {
 		String str = "No Show";
 		if(getAShow(name, time) != null) {
-			str = "Invalid";
 			for (int i = 0; i < p_size; i++) {
+				str = "Invalid";
 				if(patrons[i].getNum().equals(num)) {
 					str = num + " " + name + " " + time;
 				}
@@ -97,7 +103,9 @@ class BookYourShow {
 	}
 
 	public void showAll() {
-
+		for (int i = 0; i < sh_size; i++) {
+			System.out.println(shows[i]);
+		}
 	}
 }
 /**
@@ -144,6 +152,13 @@ class Show {
 
 	public String[] seats() {
 		return this.seats;
+	}
+
+	public String toString() {
+		String s = "";
+		s += mov_name + "," + date_time;
+		s += Arrays.toString(seats).replace(", ", ",");
+		return s;
 	}
 }
 /**
