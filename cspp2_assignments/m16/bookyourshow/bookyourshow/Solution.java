@@ -66,7 +66,7 @@ class BookYourShow {
 				}
 			}
 		} else {
-			System.out.println("No Show");
+			System.out.println("No show");
 		}
 	}
 
@@ -88,7 +88,7 @@ class BookYourShow {
 	public String printTicket(String name, String time, String num) {
 		String str = "Invalid";
 		if(getAShow(name, time) != null) {
-			str = "No Show";
+			str = "No show";
 			for (int i = 0; i < p_size; i++) {
 				str = "Invalid";
 				if(patrons[i].getNum().equals(num)) {
