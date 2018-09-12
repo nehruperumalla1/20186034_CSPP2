@@ -51,12 +51,6 @@ class BookYourShow {
 		return null;
 	}
 
-	public String toString(Show show) {
-		String str = "";
-		str = show.getName() + " " + show.gettime();
-		return str;
-	}
-
 	public void bookAShow(String m_name, String time, Patron patron) {
 		addAPatron(patron);
 		Show book = new Show();
@@ -164,6 +158,12 @@ class Show {
 		s += Arrays.toString(seats).replace(", ", ",");
 		return s;
 	}
+
+	public String toStringEx() {
+		String s = "";
+		s += mov_name + "," + date_time;
+		return s;
+	}
 }
 /**
  * Class for patron.
@@ -249,7 +249,7 @@ public final class Solution {
                 case "get":
                     Show show = bys.getAShow(check[1], tokens[1]);
                     if (show != null) {
-                       System.out.println(show);
+                       System.out.println(show.toStringEx());
                     } else {
                         System.out.println("No show");
                     }
