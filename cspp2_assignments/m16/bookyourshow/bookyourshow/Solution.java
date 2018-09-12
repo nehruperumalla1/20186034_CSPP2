@@ -88,7 +88,6 @@ class BookYourShow {
 		if(getAShow(name, time) != null) {
 			str = "Invalid";
 			for (int i = 0; i < p_size; i++) {
-				System.out.println(patrons[i].getNum() + "---------" + num);
 				if(patrons[i].getNum().equals(num)) {
 					str = num + " " + name + " " + time;
 				}
