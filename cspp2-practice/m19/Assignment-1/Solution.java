@@ -75,11 +75,15 @@ public final class Solution {
                 String[] tokens = line.split(":");
                 if (tokens.length == 5) {
                     String[] choices = tokens[1].split(",");
-                    if(choices.length == 4) {
-	                    if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= 4) {
-		                    quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
-		                        Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
-		                    size += 1;
+                    if(choices.length > 1) {
+	                    if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= choices.length) {
+	                    	if (Integer.parseInt(tokens[3]) > 0) {
+			                    quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
+			                        Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+			                    size += 1;
+			                } else {
+			                	System.out.println("Invalid max marks for " + tokens[0]);
+			                }
 	                	} else {
 	                		System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
 	                		return -1;
