@@ -85,7 +85,7 @@ public final class Solution {
 	                		return -1;
 	                	}
                 	} else {
-                		System.out.println(tokens[0] + "  does not have enough answer choices");
+                		System.out.println(tokens[0] + " does not have enough answer choices");
                 		return -1;
                 	}
                 } else  {
