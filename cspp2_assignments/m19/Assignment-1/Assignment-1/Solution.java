@@ -39,7 +39,7 @@ public final class Solution {
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                startQuiz(s, q, Integer.parseInt(tokens[1]));
+                    startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
                 case "SCORE_REPORT":
                 System.out.println("|--------------|");
@@ -76,7 +76,6 @@ public final class Solution {
                     size += 1;
                 } else  {
                     System.out.println("Error! Malformed question");
-                    break;
                 }
             }
         }else {
@@ -95,7 +94,7 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        quiz.questions(s, quiz, answerCount);
+            quiz.questions(s, quiz, answerCount);
     }
 
     /**
