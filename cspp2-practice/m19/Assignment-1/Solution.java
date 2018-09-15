@@ -206,11 +206,11 @@ class Quiz {
             ans = true;
             System.out.println("question text " + (i+1));
             int x = answer(uanswers[i].charAt(7));
-            if(x == (quiz[i].getAnswer())){
+            if(Character.getNumericValue(uanswers[i].charAt(7)) == (quiz[i].getAnswer())){
             System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
             correct += quiz[i].getMarks();
             ans = false;
-            }
+            } else if(x == (quiz[i].getAnswer()))
             if (ans) {
                 System.out.println(" "+ "Wrong Answer! - Penalty: " + quiz[i].getPenalty());
                 wrong -= quiz[i].getPenalty();
