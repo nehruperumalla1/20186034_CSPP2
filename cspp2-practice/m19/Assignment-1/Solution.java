@@ -74,18 +74,18 @@ public final class Solution {
                 String line = s.nextLine();
                 String[] tokens = line.split(":");
                 if (tokens.length == 5) {
-                	if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= 4) {
-	                    String[] choices = tokens[1].split(",");
-	                    if(choices.length == 4) {
-	                    quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
-	                        Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
-	                    size += 1;
+                    String[] choices = tokens[1].split(",");
+                    if(choices.length == 4) {
+	                    if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= 4) {
+		                    quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
+		                        Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+		                    size += 1;
 	                	} else {
-	                		System.out.println(tokens[0] + "  does not have enough answer choices");
+	                		System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
 	                		return -1;
 	                	}
                 	} else {
-                		System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                		System.out.println(tokens[0] + "  does not have enough answer choices");
                 		return -1;
                 	}
                 } else  {
