@@ -204,7 +204,7 @@ class Quiz {
 
         for (int i = 0; i < size; i++) {
             ans = true;
-            System.out.println("question text " + (i+1));
+            System.out.println(quiz[i].getQuestion());
             int x = answer(uanswers[i].charAt(7));
             if(Character.getNumericValue(uanswers[i].charAt(7)) == (quiz[i].getAnswer())){
             System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
