@@ -81,6 +81,7 @@ public final class Solution {
                     size += 1;
                 	} else {
                 		System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                		return -1;
                 	}
                 } else  {
                     System.out.println("Error! Malformed question");
