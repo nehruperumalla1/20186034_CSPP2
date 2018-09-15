@@ -63,7 +63,16 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        quiz.loding(s, quiz, questionCount);
+        int size = 0;
+        System.out.println(questionCount + " are added to the quiz");
+        while (size < questionCount) {
+            String line = s.nextLine();
+            String[] tokens = line.split(":");
+            String[] choices = tokens[1].split(",");
+            quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
+                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+            size += 1;
+        }
     }
 
     /**
@@ -87,7 +96,7 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-
+        quiz.report();
 
     }
 }
@@ -95,13 +104,14 @@ public final class Solution {
 class Quiz {
 
     private String quest;
-    private String[] options;
     private int answer;
     private int marks;
     private int penalty;
     Quiz[] quiz = new Quiz[10];
-    int size;
-    private String[] uanswers;
+    int size = 0;
+    int answersize = 0;
+    private String[] uanswers = new String[1];
+    private String[] options = new String[4];
 
     Quiz() {
         //Empty.
@@ -112,11 +122,8 @@ class Quiz {
         this.quest = question;
         this.options = choices;
         this.answer = correct;
-        this.marks = marks;
-        this.penalty = penal;
-        //this.quiz = new Quiz[10];
-        this.uanswers = new String[1];
-        this.size = 0;
+        this.marks = mark;
+        this.penalty = penal;;
     }
 
     public String getQuestion() {
@@ -149,39 +156,38 @@ class Quiz {
         size += 1;
     }
 
-    public void loding(Scanner s, Quiz quiz, int questionCount) {
-        int siz = 0;
-        while (siz < questionCount) {
-            System.out.println(size);
-            String line = s.nextLine();
-            String[] tokens = line.split(":");
-            String[] choices = tokens[1].split(",");
-            add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
-                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
-        }
-    }
-
     public void questions(Scanner s, Quiz quizz, int count) {
         for (int i = 0; i < count; i++) {
             System.out.println(quiz[i].getQuestion() + "(" + quiz[i].getMarks() + ")");
             for (int j = 0; j < options.length - 1; j++) {
-                System.out.print(options[j] + "    ");
+                System.out.print(quiz[i].getOptions()[j] + "\t");
             }
-            System.out.println(options[options.length - 1]);
-            uanswers[i] = s.nextLine();
+            System.out.println(quiz[i].getOptions()[options.length - 1]);
+            System.out.println();
+            uanswers[answersize] = s.nextLine();
+            answersize += 1;
+            resize();
         }
     }
 
     public void report() {
+        int correct = 0;
+        int wrong = 0;
+        boolean ans = true;
         for (int i = 0; i < size; i++) {
-            System.out.println("question text " + i);
-            if(uanswers[i].equals(quiz[i].getAnswer())){
-                System.out.println("Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
-            } else {
-                System.out.println("Wrong Answer! - Penalty: " + quiz[i].getPenalty());
+            ans = true;
+            System.out.println("question text " + (i+1));
+            if(Character.getNumericValue(uanswers[i].charAt(7)) == quiz[i].getAnswer()){
+            System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
+            correct += quiz[i].getMarks();
+            ans = false;
+            }
+            if (ans) {
+                System.out.println(" "+ "Wrong Answer! - Penalty: " + quiz[i].getPenalty());
+                wrong -= quiz[i].getPenalty();
             }
             
         }
-        System.out.println("Total Score: ");
+        System.out.println("Total Score: " + (correct - wrong));
     }
 }
