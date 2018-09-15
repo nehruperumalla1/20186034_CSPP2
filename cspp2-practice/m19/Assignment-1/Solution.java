@@ -226,6 +226,7 @@ class Quiz {
             ans = true;
             System.out.println(quiz[i].getQuestion());
             int x = answer(uanswers[i].charAt(7));
+            System.out.println(uanswers[i].charAt(7) + "-----" + quiz[i].getAnswer());
             if(Character.getNumericValue(uanswers[i].charAt(7)) == (quiz[i].getAnswer())){
             System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
             correct += quiz[i].getMarks();
@@ -238,8 +239,7 @@ class Quiz {
             if (ans) {
                 System.out.println(" "+ "Wrong Answer! - Penalty: " + quiz[i].getPenalty());
                 wrong -= quiz[i].getPenalty();
-            }
-            
+            }  
         }
         System.out.println("Total Score: " + (correct - wrong));
     }
