@@ -73,7 +73,7 @@ public final class Solution {
             while (size < questionCount) {
                 String line = s.nextLine();
                 String[] tokens = line.split(":");
-                if (tokens.length == 5) {
+                if (tokens.length == 5 && tokens[0].length() > 0) {
                     String[] choices = tokens[1].split(",");
                     if(choices.length > 1) {
 	                    if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= choices.length) {
@@ -83,6 +83,7 @@ public final class Solution {
 			                    size += 1;
 			                } else {
 			                	System.out.println("Invalid max marks for " + tokens[0]);
+			                	return -1;
 			                }
 	                	} else {
 	                		System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
@@ -226,7 +227,6 @@ class Quiz {
             ans = true;
             System.out.println(quiz[i].getQuestion());
             int x = answer(uanswers[i].charAt(7));
-            System.out.println(uanswers[i].charAt(7) + "-----" + quiz[i].getAnswer());
             if(Character.getNumericValue(uanswers[i].charAt(7)) == (quiz[i].getAnswer())){
             System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
             correct += quiz[i].getMarks();
