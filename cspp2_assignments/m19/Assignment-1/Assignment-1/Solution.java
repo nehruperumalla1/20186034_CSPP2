@@ -63,15 +63,7 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        int size = 0;
-        while (size < questionCount) {
-            String line = s.nextLine();
-            String[] tokens = line.split(":");
-            String[] choices = tokens[1].split(",");
-            Quiz question = new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
-                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
-            quiz.add(question);
-        }
+        quiz.loding(s, quiz, questionCount);
     }
 
     /**
@@ -107,8 +99,8 @@ class Quiz {
     private int answer;
     private int marks;
     private int penalty;
-    private Quiz[] quiz;
-    private int size;
+    Quiz[] quiz = new Quiz[10];
+    int size;
     private String[] uanswers;
 
     Quiz() {
@@ -122,7 +114,7 @@ class Quiz {
         this.answer = correct;
         this.marks = marks;
         this.penalty = penal;
-        this.quiz = new Quiz[1];
+        //this.quiz = new Quiz[10];
         this.uanswers = new String[1];
         this.size = 0;
     }
@@ -153,13 +145,20 @@ class Quiz {
     }
 
     public void add(Quiz quizz) {
-        System.out.println(size);
-        if (size >= quiz.length) {
-            resize();
-        }
         quiz[size] = quizz;
         size += 1;
-        System.out.println(size);
+    }
+
+    public void loding(Scanner s, Quiz quiz, int questionCount) {
+        int siz = 0;
+        while (siz < questionCount) {
+            System.out.println(size);
+            String line = s.nextLine();
+            String[] tokens = line.split(":");
+            String[] choices = tokens[1].split(",");
+            add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
+                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+        }
     }
 
     public void questions(Scanner s, Quiz quizz, int count) {
