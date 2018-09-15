@@ -186,14 +186,27 @@ class Quiz {
         }
     }
 
+    public int answer(char c) {
+    	String[] str = {"a", "b", "c", "d"};
+    	for (int i = 0; i < str.length; i++) {
+    		if (Character.toString(c).equals(str[i])) {
+    			return i+1;
+    		}
+
+    	}
+    	return 0;
+    }
+
     public void report() {
         int correct = 0;
         int wrong = 0;
         boolean ans = true;
+
         for (int i = 0; i < size; i++) {
             ans = true;
             System.out.println("question text " + (i+1));
-            if(String.valueOf(uanswers[i].charAt(7)).equals(String.valueOf(quiz[i].getAnswer()))){
+            int x = answer(uanswers[i].charAt(7));
+            if(x == (quiz[i].getAnswer())){
             System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
             correct += quiz[i].getMarks();
             ans = false;
