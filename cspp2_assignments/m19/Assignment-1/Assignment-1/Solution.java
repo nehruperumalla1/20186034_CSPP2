@@ -63,15 +63,24 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        int size = 0;
-        System.out.println(questionCount + " are added to the quiz");
-        while (size < questionCount) {
-            String line = s.nextLine();
-            String[] tokens = line.split(":");
-            String[] choices = tokens[1].split(",");
-            quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
-                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
-            size += 1;
+        if (questionCount > 0) {
+            int size = 0;
+            System.out.println(questionCount + " are added to the quiz");
+            while (size < questionCount) {
+                String line = s.nextLine();
+                String[] tokens = line.split(":");
+                if (tokens.length == 5) {
+                    String[] choices = tokens[1].split(",");
+                    quiz.add(new Quiz(tokens[0], choices, Integer.parseInt(tokens[2]),
+                        Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
+                    size += 1;
+                } else  {
+                    System.out.println("Error! Malformed question");
+                    break;
+                }
+            }
+        }else {
+            System.out.println("Quiz does not have questions");
         }
     }
 
@@ -177,10 +186,14 @@ class Quiz {
         for (int i = 0; i < size; i++) {
             ans = true;
             System.out.println("question text " + (i+1));
-            if(Character.getNumericValue(uanswers[i].charAt(7)) == quiz[i].getAnswer()){
+            if(Character.getNumericValue(uanswers[i].charAt(7)) == (quiz[i].getAnswer())){
             System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
             correct += quiz[i].getMarks();
             ans = false;
+            } else if(String.valueOf(uanswers[i].charAt(7)).equals(String.valueOf(quiz[i].getAnswer()))) {
+                System.out.println(" " + "Correct Answer! - Marks Awarded: " + quiz[i].getMarks());
+                correct += quiz[i].getMarks();
+                ans = false;
             }
             if (ans) {
                 System.out.println(" "+ "Wrong Answer! - Penalty: " + quiz[i].getPenalty());
