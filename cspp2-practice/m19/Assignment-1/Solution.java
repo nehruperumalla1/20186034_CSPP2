@@ -193,7 +193,6 @@ class Quiz {
     }
 
     public void questions(Scanner s, Quiz quizz, int count) {
-    	System.out.println(osize());
         for (int i = 0; i < count; i++) {
             System.out.println(quiz[i].getQuestion() + "(" + quiz[i].getMarks() + ")");
             for (int j = 0; j < quiz[i].osize() - 1; j++) {
