@@ -82,6 +82,7 @@ public final class Solution {
 	                    size += 1;
 	                	} else {
 	                		System.out.println(tokens[0] + "  does not have enough answer choices");
+	                		return -1;
 	                	}
                 	} else {
                 		System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
