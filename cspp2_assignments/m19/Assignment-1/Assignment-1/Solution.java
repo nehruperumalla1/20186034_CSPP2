@@ -108,7 +108,7 @@ class Quiz {
     private int marks;
     private int penalty;
     private Quiz[] quiz;
-    private int size = 0;
+    private int size;
     private String[] uanswers;
 
     Quiz() {
@@ -124,6 +124,7 @@ class Quiz {
         this.penalty = penal;
         this.quiz = new Quiz[1];
         this.uanswers = new String[1];
+        this.size = 0;
     }
 
     public String getQuestion() {
