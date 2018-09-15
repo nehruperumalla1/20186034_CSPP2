@@ -142,6 +142,7 @@ class Quiz {
     int answersize = 0;
     private String[] uanswers = new String[1];
     private String[] options = new String[4];
+    private int osize;
 
     Quiz() {
         //Empty.
@@ -153,7 +154,12 @@ class Quiz {
         this.options = choices;
         this.answer = correct;
         this.marks = mark;
-        this.penalty = penal;;
+        this.penalty = penal;
+        this.osize = choices.length;
+    }
+
+    private int osize() {
+    	return osize;
     }
 
     public String getQuestion() {
@@ -187,12 +193,13 @@ class Quiz {
     }
 
     public void questions(Scanner s, Quiz quizz, int count) {
+    	System.out.println(osize());
         for (int i = 0; i < count; i++) {
             System.out.println(quiz[i].getQuestion() + "(" + quiz[i].getMarks() + ")");
-            for (int j = 0; j < options.length - 1; j++) {
+            for (int j = 0; j < quiz[i].osize() - 1; j++) {
                 System.out.print(quiz[i].getOptions()[j] + "\t");
             }
-            System.out.println(quiz[i].getOptions()[options.length - 1]);
+            System.out.println(quiz[i].getOptions()[quiz[i].osize() - 1]);
             System.out.println();
             uanswers[answersize] = s.nextLine();
             answersize += 1;
