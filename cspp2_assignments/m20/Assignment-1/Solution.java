@@ -278,13 +278,13 @@ public final class Solution {
         while (k > 0) {
         	String[] tokens = scan.nextLine().split(":");
         	String[] choices = tokens[1].split(",");
-			if(tokens.length != 5 && tokens[0].length() == 0) {
+			if(tokens.length != 5 || tokens[0].length() == 0) {
 		    	System.out.println("Error! Malformed question");
 		    	return -1;
 		    } else if (choices.length <= 1) {
 		    	System.out.println(tokens[0] + " does not have enough answer choices");
 		    	return -1;
-		    } else if (Integer.parseInt(tokens[2]) <= 0 && Integer.parseInt(tokens[2]) > choices.length) {
+		    } else if (Integer.parseInt(tokens[2]) <= 0 || Integer.parseInt(tokens[2]) > choices.length) {
 		    	System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
 		    	return -1;
 		    } else if (Integer.parseInt(tokens[3]) <= 0) {
