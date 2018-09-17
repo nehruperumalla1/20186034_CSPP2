@@ -274,7 +274,7 @@ public final class Solution {
         if (q > 0) {
         	while (k > 0) {
         		String[] tokens = scan.nextLine().split(":");
-        		if (tokens.length == 5) {
+        		if (tokens.length == 5 && tokens[0] != null) {
         			String[] choices = tokens[1].split(",");
         			if (choices.length > 1) {
         				if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= choices.length) {
@@ -286,7 +286,7 @@ public final class Solution {
         							k -= 1;
 
         						} else {
-        							System.out.println("Invlid penalty for " + tokens[0]);
+        							System.out.println("Invalid penalty for " + tokens[0]);
         							return -1;
         						}
         					} else {
@@ -294,7 +294,7 @@ public final class Solution {
         						return -1;
         					}
         				} else {
-        					System.out.println("Error Correct answer choice number is out of range for " + tokens[0]);
+        					System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
         					return -1;
         				}
         			} else {
