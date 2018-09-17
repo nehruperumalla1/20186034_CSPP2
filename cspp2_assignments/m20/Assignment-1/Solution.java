@@ -274,7 +274,7 @@ public final class Solution {
         if (q > 0) {
         	while (k > 0) {
         		String[] tokens = scan.nextLine().split(":");
-        		if (tokens.length == 5 && tokens[0] != "") {
+        		if (tokens.length == 5 && tokens[0].length() != 0) {
         			String[] choices = tokens[1].split(",");
         			if (choices.length > 1) {
         				if (Integer.parseInt(tokens[2]) > 0 && Integer.parseInt(tokens[2]) <= choices.length) {
