@@ -292,7 +292,7 @@ public final class Solution {
             } else if (Integer.parseInt(tokens[2]) <= 0
                 || Integer.parseInt(tokens[2]) > choices.length) {
                 System.out.println(
-        "Error! Correct answer choice number is out of range for " + tokens[0]);
+       "Error! Correct answer choice number is out of range for " + tokens[0]);
                 return -1;
             } else if (Integer.parseInt(tokens[2 + 1]) <= 0) {
                 System.out.println("Invalid max marks for " + tokens[0]);
