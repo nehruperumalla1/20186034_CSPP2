@@ -303,7 +303,8 @@ public final class Solution {
             }
             Question question = new Question(tokens[0], choices,
                 Integer.parseInt(tokens[2]),
-                Integer.parseInt(tokens[2 + 1]), Integer.parseInt(tokens[2 + 2]));
+                Integer.parseInt(tokens[2 + 1]),
+                Integer.parseInt(tokens[2 + 2]));
             quiz.addQuestion(question);
             k -= 1;
         }
