@@ -225,7 +225,6 @@ public final class Solution {
          // code to read the test cases input file
         Scanner s = new Scanner(System.in);
         // check if there is one more line to process
-        int n = 1;
         while (s.hasNext()) {
             // read the line
             String line = s.nextLine();
@@ -237,23 +236,23 @@ public final class Solution {
                 System.out.println("|----------------|");
                 System.out.println("| Load Questions |");
                 System.out.println("|----------------|");
-                n = loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                try {
+                	loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                } catch(Exception ex) {
+                	System.out.println(ex.getMessage());
+                }
                 break;
                 case "START_QUIZ":
                 System.out.println("|------------|");
                 System.out.println("| Start Quiz |");
                 System.out.println("|------------|");
-                if (n > 0) {
-                    startQuiz(s, q, Integer.parseInt(tokens[1]));
-                }
+                startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
                 case "SCORE_REPORT":
                 System.out.println("|--------------|");
                 System.out.println("| Score Report |");
                 System.out.println("|--------------|");
-                if (n > 0) {
-                    displayScore(q);
-                }
+                displayScore(q);
                 break;
                 default:
                 break;
@@ -269,47 +268,40 @@ public final class Solution {
      *
      * @return     { Returns Integer Value }
      */
-    public static int loadQuestions(final Scanner scan,
-        final Quiz quiz, final int q) {
+    public static void loadQuestions(final Scanner scan,
+        final Quiz quiz, final int q) throws Exception {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         int k = q;
         if (q <= 0) {
-            System.out.println("Quiz does not have questions");
-            return -1;
+            throw new Exception("Quiz does not have questions");
         }
         while (k > 0) {
             String[] tokens = scan.nextLine().split(":");
             String[] choices = tokens[1].split(",");
             if (tokens.length != (2 + 2 + 1) || tokens[0].length() == 0) {
-                System.out.println("Error! Malformed question");
-                return -1;
+                throw new Exception("Error! Malformed question");
             } else if (choices.length <= 1) {
-                System.out.println(
+                throw new Exception(
                     tokens[0] + " does not have enough answer choices");
-                return -1;
             } else if (Integer.parseInt(tokens[2]) <= 0
                 || Integer.parseInt(tokens[2]) > choices.length) {
-                System.out.println(
+                throw new Exception(
        "Error! Correct answer choice number is out of range for " + tokens[0]);
-                return -1;
             } else if (Integer.parseInt(tokens[2 + 1]) <= 0) {
-                System.out.println("Invalid max marks for " + tokens[0]);
-                return -1;
+                throw new Exception("Invalid max marks for " + tokens[0]);
             } else if (Integer.parseInt(tokens[2 + 2]) > 0) {
-                System.out.println("Invalid penalty for " + tokens[0]);
-                return -1;
+                throw new Exception("Invalid penalty for " + tokens[0]);
             }
-            Question question = new Question(tokens[0], choices,
+            	Question question = new Question(tokens[0], choices,
                 Integer.parseInt(tokens[2]),
                 Integer.parseInt(tokens[2 + 1]),
                 Integer.parseInt(tokens[2 + 2]));
-            quiz.addQuestion(question);
+	            quiz.addQuestion(question);
             k -= 1;
         }
         System.out.println(q + " are added to the quiz");
-        return 1;
     }
     /**
      * Starts a quiz.
@@ -323,20 +315,22 @@ public final class Solution {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
-        String response = "";
-        for (int i = 0; i < q; i++) {
-            Question question = quiz.getQuestion(i);
-            System.out.println(question.getQuestionText() + "("
-                + question.getMaxMarks() + ")");
-            for (int j = 0; j < question.getChoice().length - 1; j++) {
-                System.out.print(question.getChoice()[j] + "\t");
-            }
-            System.out.println(question.getChoice()[
-                question.getChoice().length - 1]);
-            System.out.println();
-            response = scan.nextLine();
-            question.setResponse(response);
-        }
+    	if (quiz.getQuestion(0) != null) {
+	        String response = "";
+	        for (int i = 0; i < q; i++) {
+	            Question question = quiz.getQuestion(i);
+	            System.out.println(question.getQuestionText() + "("
+	                + question.getMaxMarks() + ")");
+	            for (int j = 0; j < question.getChoice().length - 1; j++) {
+	                System.out.print(question.getChoice()[j] + "\t");
+	            }
+	            System.out.println(question.getChoice()[
+	                question.getChoice().length - 1]);
+	            System.out.println();
+	            response = scan.nextLine();
+	            question.setResponse(response);
+	        }
+    	}
     }
     /**
      * Displays the score report.
@@ -345,6 +339,8 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
-        quiz.showReport();
+        if (quiz.getQuestion(0) != null) {
+        	quiz.showReport();
+    	}
     }
 }
