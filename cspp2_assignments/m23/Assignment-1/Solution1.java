@@ -5,8 +5,6 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.regex.*;
 import java.util.Set;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 class Data {
 	String f1;
 	Data(Scanner s1) {
@@ -19,7 +17,7 @@ class Data {
 	}
 
 	public String[] formatdata() {
-		f1 = f1.replaceAll("[^a-z0-9_]", "");
+		f1 = f1.replaceAll("[^\\p{Alpha} ]", "");
 		String[] data = f1.split(" ");
 		return data;
 	}
@@ -122,46 +120,32 @@ class BagOfWords {
 
 }
 
-public class Solution {
+public class Solution1 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		try {
-		String filename = sc.nextLine();
-		File file = new File(filename);
-		File[] filelist = file.listFiles();
-		int length = filelist.length;
 		BagOfWords b1 = new BagOfWords();
-		double[][] result = new double[length][length];
-		for (int i = 0; i < length; i++) {
+		Scanner sc = null;
+		//String filename = sc.nextLine();
+		File file = new File("File5.txt");
+		try {
+		sc = new Scanner(file);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		Data d = new Data(sc);
+		b1.addTo(d);
+		b1.wordcount(d);
+		System.out.println(b1.dcount());
 
-			BagOfWords b = new BagOfWords();
-			try {
-				sc = new Scanner(filelist[i]);
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
-			Data d = new Data(sc);
-			b.addTo(d);
-			b.wordcount(d);
-			for (int j = 0; j < length; j++) {
-				BagOfWords b2 = new BagOfWords();
-				try {
-					sc = new Scanner(filelist[j]);
-				} catch (Exception e) {
-					System.out.println(e.getMessage());
-				}
-				Data d1 = new Data(sc);
-				b2.addTo(d1);
-				b2.wordcount(d1);
-				System.out.println(i + "i" + filelist[i] + j + "j" + filelist[j]);
-				result[i][j] = Math.round(b.freqcount(b2));
-			}
+		BagOfWords b2 = new BagOfWords();
+		file = new File("File5.txt");
+		try {
+		sc = new Scanner(file);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
-		for (int i = 0; i < length; i++) {
-			System.out.println(Arrays.toString(result[i]));
-		}
-		} catch(Exception e) {
-			System.out.println("empty directory");
-		}
+		Data d1 = new Data(sc);
+		b2.addTo(d1);
+		b2.wordcount(d1);
+		System.out.println(b1.freqcount(b2));
 	}
 }
