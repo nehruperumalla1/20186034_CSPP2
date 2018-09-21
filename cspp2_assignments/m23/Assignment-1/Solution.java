@@ -19,7 +19,7 @@ class Data {
 	}
 
 	public String[] formatdata() {
-		f1 = f1.replaceAll("[^a-z0-9_]", "");
+		//f1 = f1.replaceAll("[a-z0-9_]", "");
 		String[] data = f1.split(" ");
 		return data;
 	}
