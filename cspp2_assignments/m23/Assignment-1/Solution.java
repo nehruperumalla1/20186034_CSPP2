@@ -132,6 +132,7 @@ public class Solution {
 		int length = filelist.length;
 		double[][] result = new double[length][length];
 		for (int i = 0; i < length; i++) {
+			System.out.println(filelist[i]);
 			BagOfWords b1 = new BagOfWords();
 			try {
 				sc = new Scanner(filelist[i]);
