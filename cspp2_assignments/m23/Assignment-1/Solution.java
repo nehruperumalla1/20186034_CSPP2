@@ -125,39 +125,39 @@ class BagOfWords {
 public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		try {
 		String filename = sc.nextLine();
 		File file = new File(filename);
 		File[] filelist = file.listFiles();
 		int length = filelist.length;
-		if (length != 0) {
-			double[][] result = new double[length][length];
-			for (int i = 0; i < length; i++) {
-				BagOfWords b1 = new BagOfWords();
+		double[][] result = new double[length][length];
+		for (int i = 0; i < length; i++) {
+			BagOfWords b1 = new BagOfWords();
+			try {
+				sc = new Scanner(filelist[i]);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			Data d = new Data(sc);
+			b1.addTo(d);
+			b1.wordcount(d);
+			for (int j = 0; j < length; j++) {
+				BagOfWords b2 = new BagOfWords();
 				try {
-					sc = new Scanner(filelist[i]);
+					sc = new Scanner(filelist[j]);
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
 				}
-				Data d = new Data(sc);
-				b1.addTo(d);
-				b1.wordcount(d);
-				for (int j = 0; j < length; j++) {
-					BagOfWords b2 = new BagOfWords();
-					try {
-						sc = new Scanner(filelist[j]);
-					} catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					Data d1 = new Data(sc);
-					b2.addTo(d1);
-					b2.wordcount(d1);
-					result[i][j] = Math.round(b1.freqcount(b2));
-				}
+				Data d1 = new Data(sc);
+				b2.addTo(d1);
+				b2.wordcount(d1);
+				result[i][j] = Math.round(b1.freqcount(b2));
 			}
-			for (int i = 0; i < length; i++) {
-				System.out.println(Arrays.toString(result[i]));
-			} 
-		} else {
+		}
+		for (int i = 0; i < length; i++) {
+			System.out.println(Arrays.toString(result[i]));
+		}
+		} catch(Exception e) {
 			System.out.println("empty directory");
 		}
 	}
