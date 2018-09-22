@@ -5,19 +5,51 @@ import java.util.Arrays;
   * write your code below this comment
   */
 class Task {
+    /**
+     * Name of the Task.
+     */
     private String task;
+    /**
+     * Name of the Task Holder.
+     */
     private String name;
+    /**
+     * Duration of Task in Minutes.
+     */
     private int duration;
+    /**
+     * Task Importance.
+     */
     private boolean important;
+    /**
+     * Task Urgency.
+     */
     private boolean urgent;
+    /**
+     * Status of task.
+     */
     private String status;
+
+    /**
+     * Constructs the object.
+     */
     Task() {
         //Nothiing.
     }
 
-    Task(String title, String assignedTo,
-        int time, boolean important1,
-        boolean urgent1, String status1) throws Exception {
+    /**
+     * Constructs the object.
+     *
+     * @param      title       The title
+     * @param      assignedTo  The assigned to
+     * @param      time        The time
+     * @param      important1  The important 1
+     * @param      urgent1     The urgent 1
+     * @param      status1     The status 1
+     */
+    Task(final String title, final String assignedTo,
+        final int time, final boolean important1,
+        final boolean urgent1, final String status1) throws Exception {
         if (title.length() == 0) {
             throw new Exception("Title not provided");
         }
@@ -36,30 +68,65 @@ class Task {
         status = status1;
     }
 
+    /**
+     * Gets the title.
+     *
+     * @return     The title.
+     */
     public String getTitle() {
         return this.task;
     }
 
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Gets the time.
+     *
+     * @return     The time.
+     */
     public int getTime() {
         return this.duration;
     }
 
+    /**
+     * Gets the imp.
+     *
+     * @return     The imp.
+     */
     public boolean getImp() {
         return this.important;
     }
 
+    /**
+     * Gets the urg.
+     *
+     * @return     The urg.
+     */
     public boolean getUrg() {
         return this.urgent;
     }
 
+    /**
+     * Gets the status.
+     *
+     * @return     The status.
+     */
     public String getStatus() {
         return this.status;
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String str = "";
         str += task + ", " + name + ", " + duration + ", ";
@@ -80,16 +147,35 @@ class Task {
     }
 }
 
+/**
+ * Class for todoist.
+ */
 class Todoist {
-    List<Task> tasks;
+    /**
+     * Tasks List.
+     */
+    private List<Task> tasks;
+    /**
+     * Constructs the object.
+     */
     Todoist() {
         tasks = new List<Task>();
     }
 
-    public void addTask(Task task) {
+    /**
+     * Adds a task.
+     *
+     * @param      task  The task
+     */
+    public void addTask(final Task task) {
         tasks.add(task);
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String str = "";
         for (int i = 0; i < tasks.size(); i++) {
@@ -97,8 +183,14 @@ class Todoist {
         }
         return str;
     }
-
-    public Task getNextTask(String name) {
+    /**
+     * Gets the next task.
+     *
+     * @param      name  The name
+     *
+     * @return     The next task.
+     */
+    public Task getNextTask(final String name) {
         for (int i = 0; i < tasks.size(); i++) {
             if (name.equals(tasks.get(i).getName())) {
                 if (tasks.get(i).getStatus().equals("todo")
@@ -119,11 +211,20 @@ class Todoist {
         return null;
     }
 
-    public Task[] getNextTask(String name, int count) {
+    /**
+     * Gets the next task.
+     *
+     * @param      name   The name
+     * @param      count  The count
+     *
+     * @return     The next task.
+     */
+    public Task[] getNextTask(final String name, final int count) {
         Task[] ctasks = new Task[count];
         int c = 0;
         for (int i = 0; i < tasks.size(); i++) {
-            if (name.equals(tasks.get(i).getName()) && tasks.get(i).getStatus().equals("todo")) {
+            if (name.equals(tasks.get(i).getName())
+                && tasks.get(i).getStatus().equals("todo")) {
                 ctasks[c] = (tasks.get(i));
                 c += 1;
                 if (c == count) {
@@ -147,7 +248,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+public final class TodoistMain {
 
     /**
      * Starts a test.
@@ -223,10 +324,10 @@ public class TodoistMain {
     public static Task createTask(final String[] tokens) throws Exception {
         String title = tokens[1];
         String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+        int timeToComplete = Integer.parseInt(tokens[2 + 1]);
+        boolean important = tokens[2 + 2].equals("y");
+        boolean urgent = tokens[2 + 2 + 1].equals("y");
+        String status = tokens[2 + 2 + 2];
 
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
