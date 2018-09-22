@@ -19,10 +19,10 @@ class Task {
         int time, boolean important1,
         boolean urgent1, String status1) throws Exception {
         if (title.length() == 0) {
-            throw new Exception("Title not Provided");
+            throw new Exception("Title not provided");
         }
         if (time < 0) {
-            throw new Exception("Ivalid timeToComplete " + time);
+            throw new Exception("Invalid timeToComplete " + time);
         }
 
         if (!(status1.equals("todo") || status1.equals("done"))) {
@@ -104,7 +104,13 @@ class Todoist {
                 if (tasks.get(i).getStatus().equals("todo")
                     && (tasks.get(i).getImp() && !tasks.get(i).getUrg())) {
                     return tasks.get(i);
-                } else if (tasks.get(i).getStatus().equals("todo")
+                }
+            }
+        }
+
+        for (int i = 0; i < tasks.size(); i++) {
+            if (name.equals(tasks.get(i).getName())) {
+                if (tasks.get(i).getStatus().equals("todo")
                     && (tasks.get(i).getImp() && tasks.get(i).getUrg())) {
                     return tasks.get(i);
                 }
@@ -117,7 +123,7 @@ class Todoist {
         Task[] ctasks = new Task[count];
         int c = 0;
         for (int i = 0; i < tasks.size(); i++) {
-            if (name.equals(tasks.get(i).getName())) {
+            if (name.equals(tasks.get(i).getName()) && tasks.get(i).getStatus().equals("todo")) {
                 ctasks[c] = (tasks.get(i));
                 c += 1;
                 if (c == count) {
