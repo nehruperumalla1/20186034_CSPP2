@@ -153,26 +153,45 @@ class Task {
  */
 class Todoist {
     /**
-     * Tasks List.
+     * Tasks Array.
      */
     private Task[] tasks;
+    /**
+     * Size variable.
+     */
     private int size;
     /**
      * Constructs the object.
      */
     Todoist() {
-        tasks = new Task[10];
+        tasks = new Task[1];
         size = 0;
     }
 
+    /**
+     * Size Method.
+     *
+     * @return     { Returns Integer }
+     */
     public int size() {
         return size;
     }
+
+    /**
+     * resize.
+     */
     public void resize() {
         tasks = Arrays.copyOf(tasks, tasks.length * 2);
     }
 
-    public Task get(int index) {
+    /**
+     * Get Task at that Index.
+     *
+     * @param      index  The index
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public Task get(final int index) {
         return tasks[index];
     }
     /**
