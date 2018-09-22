@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
-  * write your code below this comment
+  * write your code below this comment.
   */
 class Task {
     /**
@@ -46,6 +46,7 @@ class Task {
      * @param      important1  The important 1
      * @param      urgent1     The urgent 1
      * @param      status1     The status 1
+     * @throws
      */
     Task(final String title, final String assignedTo,
         final int time, final boolean important1,
@@ -235,6 +236,11 @@ class Todoist {
         return ctasks;
     }
 
+    /**
+     * Total Time for Completion.
+     *
+     * @return     { Returns Integer }
+     */
     public int totalTime4Completion() {
         int time = 0;
         for (int i = 0; i < tasks.size(); i++) {
@@ -248,7 +254,7 @@ class Todoist {
 /**
  * Class for todoist main.
  */
-public final class TodoistMain {
+class TodoistMain {
 
     /**
      * Starts a test.
