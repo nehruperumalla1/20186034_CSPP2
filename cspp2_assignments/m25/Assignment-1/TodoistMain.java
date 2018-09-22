@@ -72,7 +72,7 @@ class Task {
         if (getUrg()) {
             str += "Urgent, ";
         } else {
-            str += "Not urgent, ";
+            str += "Not Urgent, ";
         }
 
         str += getStatus();
