@@ -60,10 +60,9 @@ class Plagiarism {
 		int count2 = 1;
 		System.out.println("      " + "\t\t");
 		for (int x = 1; x <= length; x++) {
-			System.out.print("File");
+			System.out.print("\t" + "File");
 			System.out.print(x);
 			System.out.print(".txt");
-			System.out.print("\t");
 		}
 
 		System.out.println();
@@ -71,7 +70,7 @@ class Plagiarism {
 			if ((count % length) == 0) {
 				System.out.print("File");
 				System.out.print(count1);
-				System.out.print("\t" + ".txt");
+				System.out.print(".txt" + "\t");
 			}
 			final int num = 100;
 			Long s = Math.round(
