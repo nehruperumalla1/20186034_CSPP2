@@ -115,6 +115,7 @@ public class Solution {
 			File folder = new File(scan.next());
 			File[] listOfFiles = folder.listFiles();
 			for (File i : listOfFiles) {
+				System.out.println(i.getName());
 				FileReader fr = new FileReader(i);
 				BufferedReader br = new BufferedReader(fr);
 				String buffer = "";
