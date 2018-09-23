@@ -31,8 +31,8 @@ class Plagiarism {
 
 	public void bagOfWords() {
 		ArrayList<int[]> word = new ArrayList<int[]>();
-		for (HashMap<String, Integer> a: text) {
-			for (HashMap<String, Integer> b: text) {
+		for (HashMap<String, Integer> a : text) {
+			for (HashMap<String, Integer> b : text) {
 				int tcount = 0;
 				int c1 = 0;
 				int c2 = 0;
@@ -71,7 +71,7 @@ class Plagiarism {
 			if ((count % length) == 0) {
 				System.out.print("File");
 				System.out.print(count1);
-				System.out.print(".txt" + "\t");
+				System.out.print("\t" + ".txt");
 			}
 			final int num = 100;
 			Long s = Math.round(
