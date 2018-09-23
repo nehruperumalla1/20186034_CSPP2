@@ -1,6 +1,6 @@
-import java.util.*;
-import java.io.*;
-import java.net.*;
+import java.util.Scanner;
+import java.util.HashMap;
+import java.io.File;
 /**
  * Class for string match.
  */
