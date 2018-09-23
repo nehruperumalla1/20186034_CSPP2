@@ -9,23 +9,32 @@ class StringMatch {
      * Hashmap.
      */
     private HashMap<String, Integer> freqWords = new HashMap<>();
-    String str1 = "";
-    String str2 = "";
-    double result;
+    /**
+     * String 1.
+     */
+    private String str1 = "";
+    /**
+     * String 2.
+     */
+    private String str2 = "";
+    /**
+     * Result.
+     */
+    private double result;
     /**
      * Constructs the object.
      *
      * @param      file1  The file 1
      * @param      file2  The file 2
      */
-    public StringMatch(final File file1, final File file2) {
+    StringMatch(final File file1, final File file2) {
         try {
             Scanner scan = new Scanner(file1);
             while (scan.hasNext()) {
                 str1 += scan.nextLine();
             }
             scan = new Scanner(file2);
-            while(scan.hasNext()) {
+            while (scan.hasNext()) {
                 str2 += scan.nextLine();
             }
             String str = "";
@@ -39,10 +48,10 @@ class StringMatch {
                 }
             }
             if (file1.getName().equals(file2.getName())) {
-                result = 100;
+                result = Math.pow(2 * 2 * 2 + 2, 2);
                 System.out.format("%13.1f", result);
             } else {
-                double nmr = str.length() * 2 * 100;
+                double nmr = str.length() * 2 * Math.pow(2 * 2 * 2 + 2, 2);
                 double dnm = str1.length() + str2.length();
                 result = Math.round(nmr / dnm);
                 System.out.format("%13.1f", result);
@@ -73,11 +82,11 @@ public final class Solution {
     }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         try {
             Scanner scan = new Scanner(System.in);
             String str = scan.nextLine();
