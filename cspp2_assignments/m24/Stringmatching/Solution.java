@@ -112,7 +112,7 @@ public final class Solution {
                         equals(listOfFiles[j].getName())) {
                         max = s;
                         file1 = listOfFiles[i].getName();
-                        file2 = listOfFiles[0].getName();
+                        file2 = listOfFiles[j].getName();
                     }
                 }
                 System.out.print(" ");
