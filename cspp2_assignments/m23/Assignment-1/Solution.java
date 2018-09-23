@@ -69,19 +69,19 @@ class Plagiarism {
 		System.out.println();
 		for (int[] d : word) {
 			if ((count % length) == 0) {
-				System.out.println("File");
-				System.out.println(count1);
-				System.out.println(".txt" + "\t");
+				System.out.print("File");
+				System.out.print(count1);
+				System.out.print(".txt" + "\t");
 			}
 			final int num = 100;
 			Long s = Math.round(
 				d[2] / (Math.sqrt(d[0]) * Math.sqrt(d[1])) * num);
 			if (d[0] == 0 || d[1] == 0) {
-				System.out.println("0");
+				System.out.print("0");
 			} else {
-				System.out.println(s);
+				System.out.print(s);
 			}
-			System.out.println("\t\t");
+			System.out.print("\t\t");
 			count++;
 			if ((count % length) == 0) {
 				System.out.println();
