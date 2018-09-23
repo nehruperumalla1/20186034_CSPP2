@@ -21,7 +21,7 @@ class Plagiarism {
 			int count = 0;
 			for (String m : words) {
 				if (n.equals(m)) {
-					count += 2;
+					count += 1;
 				}
 			}
 			freq.put(n, count);
