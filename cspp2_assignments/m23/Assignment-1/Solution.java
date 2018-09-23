@@ -121,7 +121,6 @@ public class Solution {
 				String s;
 				while (((s = br.readLine()) != null)) {
 					buffer += s;
-					buffer += " ";
 				}
 				Pattern pat = Pattern.compile("[^a-z A-Z 0-9]");
 				Matcher m = pat.matcher(buffer);
