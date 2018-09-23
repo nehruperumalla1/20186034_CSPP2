@@ -58,11 +58,12 @@ class Plagiarism {
 		int count = length;
 		int count1 = 1;
 		int count2 = 1;
-		System.out.println("      " + "\t\t");
+		System.out.print("      " + "\t\t");
 		for (int x = 1; x <= length; x++) {
-			System.out.print("\t" + "File");
+			System.out.print("File");
 			System.out.print(x);
 			System.out.print(".txt");
+			System.out.print("\t");
 		}
 
 		System.out.println();
